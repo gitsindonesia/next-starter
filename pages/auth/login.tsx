@@ -15,11 +15,10 @@ export default function Login() {
           validate={(values) => {
             const errors = {};
             if (!values.username) {
-              errors.username = 'Required';
-            } else if (
-              !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.username)
-            ) {
-              errors.username = 'Invalid username address';
+              errors.username = 'Username is required';
+            }
+            if (!values.password) {
+              errors.password = 'Password is required';
             }
             return errors;
           }}
@@ -81,12 +80,10 @@ export default function Login() {
                   onBlur={handleBlur}
                   value={values.password}
                 />
-                {errors.username && touched.username && (
-                  <p className="text-red-500 text-sm mt-1">{errors.username}</p>
+                {errors.password && touched.password && (
+                  <p className="text-red-500 text-sm mt-1">{errors.password}</p>
                 )}
               </div>
-
-              {errors.password && touched.password && errors.password}
 
               <div className="mt-4 flex gap-4 justify-between items-center">
                 <Button variant="primary" type="submit" disabled={isSubmitting}>
