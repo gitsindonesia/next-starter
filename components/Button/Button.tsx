@@ -19,6 +19,8 @@ export type ButtonProps = {
   text?: boolean;
   disabled?: boolean;
   rounded?: boolean;
+  className?: string;
+  type?: 'button' | 'submit' | 'reset';
 };
 
 export const variants: Record<string, Record<ButtonVariants, string>> = {
@@ -98,6 +100,8 @@ const Button = ({
   children,
   variant = 'default',
   size = 'md',
+  type = 'button',
+  className,
   ...props
 }: ButtonProps) => {
   const style = getStyle(props);
@@ -108,6 +112,7 @@ const Button = ({
 
   return (
     <button
+      type={type}
       className={[
         baseClass,
         borderClass,
@@ -115,6 +120,7 @@ const Button = ({
         variantClass,
         sizeClass,
         disabledClass,
+        className,
       ].join(' ')}
       {...props}
     >
