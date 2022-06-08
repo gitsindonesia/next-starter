@@ -22,7 +22,7 @@ const Button = ({ children, variant = 'default' }: ButtonProps) => {
   const variantClass = getVariantClass(variant);
 
   const defaultClass =
-    'px-4 py-2 border transition duration-300 font-medium text-sm rounded-md';
+    'px-4 py-2 border transition duration-300 font-medium text-sm rounded-md inline-flex justify-center items-center';
 
   return (
     <button className={[defaultClass, variantClass].join(' ')}>
