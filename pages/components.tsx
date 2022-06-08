@@ -11,9 +11,12 @@ import Dropdown from '../components/Dropdown/Dropdown';
 const Components: NextPage = () => {
   return (
     <div className="container mx-auto py-4 sm:py-6">
-      <h1 className="text-3xl font-bold mb-5">Component Library</h1>
+      <div className="text-center py-6">
+        <h1 className="text-4xl font-bold text-gray-800">Component Library</h1>
+        <p className="text-gray-500 mt-1 text-lg">Built-in components</p>
+      </div>
 
-      <h2 className="text-xl font-bold mb-3 text-gray-800">Buttons</h2>
+      <h2 className="text-xl font-bold mb-3 mt-5 text-gray-800">Buttons</h2>
       <h3 className="text-lg font-medium mb-2 text-gray-700">Variants</h3>
       <div className="space-x-2">
         {Object.keys(variants).map((variant) => (
@@ -34,8 +37,8 @@ const Components: NextPage = () => {
         </div>
       </div>
 
-      <div className="mt-5">
-        <h1 className="text-xl font-bold mb-2 text-gray-800">Dropdown</h1>
+      <div className="mt-10">
+        <h2 className="text-xl font-bold mb-3 mt-5 text-gray-800">Dropdown</h2>
         <Dropdown />
       </div>
 
