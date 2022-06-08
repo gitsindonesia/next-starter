@@ -17,9 +17,6 @@ export default function Header() {
           <Link href="/">
             <a className="hover:font-semibold">Home</a>
           </Link>
-          <Link href="/components">
-            <a className="hover:font-semibold">Components</a>
-          </Link>
         </nav>
       </div>
     </div>
