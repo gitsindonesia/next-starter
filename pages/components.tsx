@@ -1,6 +1,6 @@
 import type { NextPage } from 'next';
 import Link from 'next/link';
-import Button from '../components/Button/Button';
+import Button, { ButtonSizes, sizes } from '../components/Button/Button';
 import Dropdown from '../components/Dropdown/Dropdown';
 
 const Components: NextPage = () => {
@@ -12,6 +12,15 @@ const Components: NextPage = () => {
       <div className="space-x-2">
         <Button>Default</Button>
         <Button variant="primary">Primary</Button>
+      </div>
+
+      <h1 className="text-xl font-bold mb-2 text-gray-800">Button Sizes</h1>
+      <div className="flex items-end gap-2">
+        {Object.keys(sizes).map((size) => (
+          <Button size={size as ButtonSizes} key={size}>
+            button: {size}
+          </Button>
+        ))}
       </div>
 
       <div className="mt-5">
