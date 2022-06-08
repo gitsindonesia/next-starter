@@ -1,6 +1,12 @@
 import React from 'react';
 
-export type ButtonVariants = 'default' | 'primary';
+export type ButtonVariants =
+  | 'default'
+  | 'primary'
+  | 'secondary'
+  | 'info'
+  | 'warning'
+  | 'error';
 
 export type ButtonSizes = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
 
@@ -15,6 +21,13 @@ export const variants = {
     'bg-white text-slate-800 border-slate-400 hover:border-slate-600 hover:text-slate-800',
   primary:
     'text-white bg-blue-600 border-blue-600 hover:bg-blue-700 hover:border-blue-700',
+  secondary:
+    'text-white bg-gray-800 border-gray-800 hover:bg-gray-900 hover:border-gray-900',
+  info: 'text-white bg-sky-600 border-sky-600 hover:bg-sky-700 hover:border-sky-700',
+  warning:
+    'text-white bg-orange-600 border-orange-600 hover:bg-orange-700 hover:border-orange-700',
+  error:
+    'text-white bg-red-600 border-red-600 hover:bg-red-700 hover:border-red-700',
 };
 
 function getVariantClass(variant: ButtonVariants) {
