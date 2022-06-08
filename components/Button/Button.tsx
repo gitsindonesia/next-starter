@@ -1,3 +1,4 @@
+import { useMemo } from '@storybook/addons';
 import React from 'react';
 
 export type ButtonVariants =
@@ -17,6 +18,7 @@ export type ButtonProps = {
   outlined?: boolean;
   text?: boolean;
   disabled?: boolean;
+  rounded?: boolean;
 };
 
 export const variants: Record<string, Record<ButtonVariants, string>> = {
@@ -86,6 +88,9 @@ function getStyle(props: Partial<ButtonProps>) {
   return style;
 }
 
+const baseClass =
+  'transition duration-300 font-medium inline-flex justify-center items-center';
+
 const disabledClass =
   'disabled:text-gray-400 disabled:border-gray-200 disabled:bg-gray-200 disabled:cursor-not-allowed';
 
@@ -98,16 +103,19 @@ const Button = ({
   const style = getStyle(props);
   const variantClass = getVariantClass(variant, style);
   const sizeClass = getSizeClass(size);
-
-  const defaultClass = `${
-    !props.text ? 'border' : ''
-  } transition duration-300 font-medium rounded-md inline-flex justify-center items-center`;
+  const borderClass = !props.text ? 'border' : '';
+  const roundedClass = props.rounded ? 'rounded-full' : 'rounded-md';
 
   return (
     <button
-      className={[defaultClass, variantClass, sizeClass, disabledClass].join(
-        ' '
-      )}
+      className={[
+        baseClass,
+        borderClass,
+        roundedClass,
+        variantClass,
+        sizeClass,
+        disabledClass,
+      ].join(' ')}
       {...props}
     >
       {children}

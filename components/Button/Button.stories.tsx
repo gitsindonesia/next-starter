@@ -33,6 +33,9 @@ Outlined.args = { outlined: true };
 export const Text = Template.bind({});
 Text.args = { text: true };
 
+export const Rounded = Template.bind({});
+Rounded.args = { rounded: true };
+
 export const Disabled = Template.bind({});
 Disabled.args = { disabled: true };
 
