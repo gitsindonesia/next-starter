@@ -14,7 +14,9 @@ const Components: NextPage = () => {
         <Button variant="primary">Primary</Button>
       </div>
 
-      <h1 className="text-xl font-bold mb-2 text-gray-800">Button Sizes</h1>
+      <h1 className="text-xl font-bold mt-5 mb-2 text-gray-800">
+        Button Sizes
+      </h1>
       <div className="flex items-end gap-2">
         {Object.keys(sizes).map((size) => (
           <Button size={size as ButtonSizes} key={size}>
