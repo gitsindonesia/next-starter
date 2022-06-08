@@ -9,8 +9,9 @@ export type ButtonProps = {
 
 const variants = {
   default:
-    'bg-white text-slate-900 border-slate-400 hover:border-slate-600 hover:text-slate-800',
-  primary: 'text-white bg-blue-600 hover:bg-blue-700',
+    'bg-white text-slate-800 border-slate-400 hover:border-slate-600 hover:text-slate-800',
+  primary:
+    'text-white bg-blue-600 border-blue-600 hover:bg-blue-700 hover:border-blue-700',
 };
 
 function getVariantClass(variant: ButtonVariants) {
@@ -21,7 +22,7 @@ const Button = ({ children, variant = 'default' }: ButtonProps) => {
   const variantClass = getVariantClass(variant);
 
   const defaultClass =
-    'px-3 py-2 border transition duration-300 font-semibold rounded';
+    'px-4 py-2 border transition duration-300 font-medium text-sm rounded-md';
 
   return (
     <button className={[defaultClass, variantClass].join(' ')}>
