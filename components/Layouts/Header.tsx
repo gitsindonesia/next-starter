@@ -21,6 +21,9 @@ export default function Header() {
           <Link href="/">
             <a className="hover:font-semibold">Home</a>
           </Link>
+          <Link href="/auth/login">
+            <a className="hover:font-semibold">Login</a>
+          </Link>
         </nav>
       </div>
     </div>
