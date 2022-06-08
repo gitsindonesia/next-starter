@@ -14,14 +14,11 @@ export default function Header() {
         />
 
         <nav className="flex gap-4 items-center">
-          <Link className="hover:font-semibold" href="/">
-            <a>Home</a>
+          <Link href="/">
+            <a className="hover:font-semibold">Home</a>
           </Link>
-          <Link className="hover:font-semibold" href="/about">
-            <a>About</a>
-          </Link>
-          <Link className="hover:font-semibold" href="/components">
-            <a>Components</a>
+          <Link href="/components">
+            <a className="hover:font-semibold">Components</a>
           </Link>
         </nav>
       </div>
