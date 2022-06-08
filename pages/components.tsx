@@ -1,6 +1,11 @@
 import type { NextPage } from 'next';
 import Link from 'next/link';
-import Button, { ButtonSizes, sizes } from '../components/Button/Button';
+import Button, {
+  ButtonSizes,
+  ButtonVariants,
+  sizes,
+  variants,
+} from '../components/Button/Button';
 import Dropdown from '../components/Dropdown/Dropdown';
 
 const Components: NextPage = () => {
@@ -8,21 +13,25 @@ const Components: NextPage = () => {
     <div className="container mx-auto py-4 sm:py-6">
       <h1 className="text-3xl font-bold mb-5">Component Library</h1>
 
-      <h1 className="text-xl font-bold mb-2 text-gray-800">Buttons</h1>
+      <h2 className="text-xl font-bold mb-3 text-gray-800">Buttons</h2>
+      <h3 className="text-lg font-medium mb-2 text-gray-700">Variants</h3>
       <div className="space-x-2">
-        <Button>Default</Button>
-        <Button variant="primary">Primary</Button>
-      </div>
-
-      <h1 className="text-xl font-bold mt-5 mb-2 text-gray-800">
-        Button Sizes
-      </h1>
-      <div className="flex items-end gap-2">
-        {Object.keys(sizes).map((size) => (
-          <Button size={size as ButtonSizes} key={size}>
-            button: {size}
+        {Object.keys(variants).map((variant) => (
+          <Button variant={variant as ButtonVariants} key={variant}>
+            {variant}
           </Button>
         ))}
+      </div>
+
+      <div className="mt-5">
+        <h3 className="text-lg font-medium mb-2 text-gray-700">Sizes</h3>
+        <div className="flex items-end gap-2">
+          {Object.keys(sizes).map((size) => (
+            <Button size={size as ButtonSizes} key={size}>
+              button: {size}
+            </Button>
+          ))}
+        </div>
       </div>
 
       <div className="mt-5">
