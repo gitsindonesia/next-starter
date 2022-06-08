@@ -1,5 +1,6 @@
 import type { NextPage } from 'next';
 import Button from '../components/Button/Button';
+import Dropdown from '../components/Dropdown/Dropdown';
 
 const Home: NextPage = () => {
   return (
@@ -8,6 +9,8 @@ const Home: NextPage = () => {
 
       <Button>Button</Button>
       <Button variant="primary">Button</Button>
+
+      <Dropdown />
     </div>
   );
 };
