@@ -7,6 +7,14 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 - [Tailwind CSS](https://tailwindcss.com/)
 - [Headless UI](https://headlessui.dev/)
 - [Storybook](https://storybook.js.org/)
+- Formik
+- Iconify
+- Conventional Commits
+
+## Built-in Components
+
+- Button
+- Dropdown (Headless UI)
 
 ## Getting Started
 
