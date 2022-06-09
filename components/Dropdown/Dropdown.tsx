@@ -1,4 +1,5 @@
 import { Menu, Transition } from '@headlessui/react';
+import Link from 'next/link';
 import { Fragment, useEffect, useRef, useState } from 'react';
 import Button, { ButtonProps } from '../Button/Button';
 
@@ -63,21 +64,37 @@ export function DropdownItem({
   children,
   text,
   className,
+  href,
   ...props
 }: DropdownItemProps) {
   return (
-    <Menu.Item>
-      {({ active }) => (
-        <button
-          className={`${
-            active ? 'bg-blue-600 text-white' : 'text-gray-900'
-          } group flex w-full items-center rounded-md px-2 py-2 ${className}`}
-          {...props}
-        >
-          {icon}
-          {children ?? text}
-        </button>
-      )}
+    <Menu.Item {...props}>
+      {({ active }) =>
+        href ? (
+          <Link href={href} {...props}>
+            <a
+              className={[getDropdownItemClasses(active), className].join(' ')}
+            >
+              {icon}
+              {children ?? text}
+            </a>
+          </Link>
+        ) : (
+          <button
+            className={[getDropdownItemClasses(active), className].join(' ')}
+          >
+            {icon}
+            {children ?? text}
+          </button>
+        )
+      }
     </Menu.Item>
   );
+}
+
+export function getDropdownItemClasses(active?: boolean) {
+  return `
+    group flex w-full items-center rounded-md px-2 py-2
+    hover:bg-blue-600 hover:text-white text-gray-900
+  `;
 }

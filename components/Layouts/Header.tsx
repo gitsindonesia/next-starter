@@ -55,7 +55,7 @@ export default function Header() {
               right
             >
               <div className="p-1">
-                <DropdownItem>Profile</DropdownItem>
+                <DropdownItem href="/profile">Profile</DropdownItem>
               </div>
               <div className="p-1">
                 <DropdownItem
