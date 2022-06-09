@@ -8,7 +8,8 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 - [Headless UI](https://headlessui.dev/)
 - [Storybook](https://storybook.js.org/)
 - [React Hook Form](https://react-hook-form.com/)
-- Iconify
+- [React Query](https://react-query.tanstack.com/)
+- [Iconify](https://docs.iconify.design/icon-components/react/)
 - Conventional Commits
 
 ## Built-in Components
