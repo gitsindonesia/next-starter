@@ -7,7 +7,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 - [Tailwind CSS](https://tailwindcss.com/)
 - [Headless UI](https://headlessui.dev/)
 - [Storybook](https://storybook.js.org/)
-- Formik
+- [React Hook Form](https://react-hook-form.com/)
 - Iconify
 - Conventional Commits
 

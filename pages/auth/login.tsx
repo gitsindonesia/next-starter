@@ -1,23 +1,26 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import Button from '../../components/Button/Button';
-import { useFormik } from 'formik';
-import * as Yup from 'yup';
+import { useForm } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
+import * as yup from 'yup';
+
+const schema = yup
+  .object({
+    username: yup.string().required(),
+    password: yup.string().required(),
+  })
+  .required();
 
 export default function Login() {
-  const formik = useFormik({
-    initialValues: {
-      username: '',
-      password: '',
-    },
-    validationSchema: Yup.object({
-      username: Yup.string().required('Required'),
-      password: Yup.string().required('Required'),
-    }),
-    onSubmit: (values) => {
-      alert(JSON.stringify(values, null, 2));
-    },
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    resolver: yupResolver(schema),
   });
+  const onSubmit = (data: Record<string, any>) => console.log(data);
 
   return (
     <>
@@ -27,7 +30,7 @@ export default function Login() {
       <div className="container mx-auto px-4 sm:px-0 py-6 sm:h-screen flex items-center justify-center">
         <form
           className="w-full sm:w-3/12 mx-auto rounded-lg border p-6"
-          onSubmit={formik.handleSubmit}
+          onSubmit={handleSubmit(onSubmit)}
         >
           <div>
             <h1 className="text-3xl font-semibold">Login</h1>
@@ -43,13 +46,11 @@ export default function Login() {
               type="text"
               placeholder="Username"
               className="w-full px-3 py-2 rounded-md transition duration-300 focus:ring/50"
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
-              value={formik.values.username}
+              {...register('username')}
             />
-            {formik.errors.username && formik.touched.username && (
+            {errors.username && (
               <p className="text-red-500 text-sm mt-1">
-                {formik.errors.username}
+                {errors.username?.message}
               </p>
             )}
           </div>
@@ -63,23 +64,17 @@ export default function Login() {
               type="text"
               placeholder="Password"
               className="w-full px-3 py-2 rounded-md transition duration-300 focus:ring/50"
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
-              value={formik.values.password}
+              {...register('password')}
             />
-            {formik.errors.password && formik.touched.password && (
+            {errors.password && (
               <p className="text-red-500 text-sm mt-1">
-                {formik.errors.password}
+                {errors.password?.message}
               </p>
             )}
           </div>
 
           <div className="mt-4 flex gap-4 justify-between items-center">
-            <Button
-              variant="primary"
-              type="submit"
-              disabled={formik.isSubmitting}
-            >
+            <Button variant="primary" type="submit">
               Submit
             </Button>
             <Link href="/auth/password/forgot">
