@@ -2,9 +2,12 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Icon } from '@iconify/react';
 import { useState } from 'react';
+import { useSession, signIn, signOut } from 'next-auth/react';
+import { Dropdown, DropdownItem } from '../Dropdown/Dropdown';
 
 export default function Header() {
   let [isOpen, setIsOpen] = useState(false);
+  const { data: session } = useSession();
 
   return (
     <div className="py-3 border-b bg-white">
@@ -42,14 +45,41 @@ export default function Header() {
               Home
             </a>
           </Link>
-          <Link href="/auth/login">
-            <a
-              className="block px-4 py-2 w-full sm:inline hover:font-semibold"
-              onClick={() => setIsOpen(false)}
+          {session ? (
+            <Dropdown
+              label={session?.user?.name?.toString()}
+              buttonProps={{
+                variant: 'secondary',
+                className: 'whitespace-nowrap',
+              }}
+              right
             >
-              Login
-            </a>
-          </Link>
+              <div className="p-1">
+                <DropdownItem>Profile</DropdownItem>
+              </div>
+              <div className="p-1">
+                <DropdownItem
+                  onClick={() => {
+                    setIsOpen(false);
+                    signOut();
+                  }}
+                >
+                  Sign out
+                </DropdownItem>
+              </div>
+            </Dropdown>
+          ) : (
+            <button
+              type="button"
+              className="block px-4 py-2 w-full sm:inline hover:font-semibold whitespace-nowrap"
+              onClick={() => {
+                setIsOpen(false);
+                signIn();
+              }}
+            >
+              Sign in
+            </button>
+          )}
         </nav>
       </div>
     </div>

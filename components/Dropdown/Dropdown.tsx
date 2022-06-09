@@ -1,12 +1,13 @@
 import { Menu, Transition } from '@headlessui/react';
 import { Fragment, useEffect, useRef, useState } from 'react';
-import Button from '../Button/Button';
+import Button, { ButtonProps } from '../Button/Button';
 
 export type DropdownProps = {
   label?: string;
   right?: boolean;
   children?: React.ReactNode;
   button?: React.ReactNode;
+  buttonProps?: Omit<ButtonProps, 'children'>;
 };
 
 export function Dropdown({
@@ -14,11 +15,18 @@ export function Dropdown({
   label,
   children,
   button,
+  buttonProps,
 }: DropdownProps) {
   return (
     <div className="">
       <Menu as="div" className="relative inline-block text-left">
-        <div>{button ?? <Menu.Button as={Button}>{label}</Menu.Button>}</div>
+        <div>
+          {button ?? (
+            <Menu.Button as={Button} {...buttonProps}>
+              {label}
+            </Menu.Button>
+          )}
+        </div>
         <Transition
           as={Fragment}
           enter="transition ease-out duration-100"
@@ -45,16 +53,26 @@ export type DropdownItemProps = {
   icon?: React.ReactNode;
   text?: string;
   children?: React.ReactNode | string;
+  className?: string;
+  href?: string;
+  onClick?: () => void;
 };
 
-export function DropdownItem({ icon, children, text }: DropdownItemProps) {
+export function DropdownItem({
+  icon,
+  children,
+  text,
+  className,
+  ...props
+}: DropdownItemProps) {
   return (
     <Menu.Item>
       {({ active }) => (
         <button
           className={`${
             active ? 'bg-blue-600 text-white' : 'text-gray-900'
-          } group flex w-full items-center rounded-md px-2 py-2`}
+          } group flex w-full items-center rounded-md px-2 py-2 ${className}`}
+          {...props}
         >
           {icon}
           {children ?? text}
