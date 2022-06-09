@@ -24,9 +24,9 @@ export default function Login() {
       <Head>
         <title>Login</title>
       </Head>
-      <div className="container mx-auto py-6 sm:h-screen flex items-center justify-center">
+      <div className="container mx-auto px-4 sm:px-0 py-6 sm:h-screen flex items-center justify-center">
         <form
-          className="w-3/12 mx-auto rounded-lg border p-6"
+          className="w-full sm:w-3/12 mx-auto rounded-lg border p-6"
           onSubmit={formik.handleSubmit}
         >
           <div>

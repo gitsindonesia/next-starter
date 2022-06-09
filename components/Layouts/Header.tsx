@@ -4,7 +4,7 @@ import Link from 'next/link';
 export default function Header() {
   return (
     <div className="py-3 border-b bg-white">
-      <div className="flex gap-4 container mx-auto items-center justify-between">
+      <div className="flex gap-4 container px-4 sm:px-0 mx-auto items-center justify-between">
         <Link href="/">
           <a>
             <Image
