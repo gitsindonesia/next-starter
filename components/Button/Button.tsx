@@ -21,6 +21,8 @@ export type ButtonProps = {
   rounded?: boolean;
   className?: string;
   type?: 'button' | 'submit' | 'reset';
+  block?: boolean;
+  onClick?: () => void;
 };
 
 export const variants: Record<string, Record<ButtonVariants, string>> = {
@@ -109,6 +111,7 @@ const Button = ({
   const sizeClass = getSizeClass(size);
   const borderClass = !props.text ? 'border' : '';
   const roundedClass = props.rounded ? 'rounded-full' : 'rounded-md';
+  const blockClass = props.block ? 'w-full' : '';
 
   return (
     <button
@@ -120,6 +123,7 @@ const Button = ({
         variantClass,
         sizeClass,
         disabledClass,
+        blockClass,
         className,
       ].join(' ')}
       {...props}
