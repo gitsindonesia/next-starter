@@ -31,7 +31,8 @@ export default function Login({ csrfToken }: any) {
   const onSubmit = ({username, password}: FormLogin) => {
     signIn('credentials', {
       username,
-      password
+      password,
+      callbackUrl: 'http://localhost:3000'
     })
   };
 
@@ -75,7 +76,7 @@ export default function Login({ csrfToken }: any) {
                     id="username"
                     type="text"
                     placeholder="Username"
-                    className="w-full text-sm px-4 py-2 border-gray-300 placeholder-gray-300 rounded-md transition duration-300 focus:ring/50"
+                    className="w-full text-sm px-4 py-3 border-gray-300 placeholder-gray-300 rounded-md transition duration-300 focus:ring/50"
                     {...register('username')}
                   />
                   {errors.username && (
@@ -93,7 +94,7 @@ export default function Login({ csrfToken }: any) {
                     id="password"
                     type="text"
                     placeholder="Password"
-                    className="w-full text-sm px-4 py-2 border-gray-300 placeholder-gray-300 rounded-md transition duration-300 focus:ring/50"
+                    className="w-full text-sm px-4 py-3 border-gray-300 placeholder-gray-300 rounded-md transition duration-300 focus:ring/50"
                     {...register('password')}
                   />
                   {errors.password && (
