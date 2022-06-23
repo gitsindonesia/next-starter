@@ -1,4 +1,6 @@
 import { useSession } from 'next-auth/react';
+import Footer from './Footer';
+import Header from './Header';
 
 export default function AuthenticatedPage({
   children,
@@ -15,5 +17,10 @@ export default function AuthenticatedPage({
     return <p>Unauthenticated</p>;
   }
 
-  return <div>{children}</div>;
+  return (
+    <div>
+    <Header />
+      {children}
+    <Footer />
+    </div>);
 }
