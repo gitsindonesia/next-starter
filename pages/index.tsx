@@ -1,9 +1,10 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
+import MainLayout from '../components/Layouts/MainLayout';
 
 const Home: NextPage = () => {
   return (
-    <>
+    <MainLayout>
       <Head>
         <title>GITS Next Starter</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
@@ -17,7 +18,7 @@ const Home: NextPage = () => {
           <p className="mt-5">You are ready to rock!</p>
         </div>
       </div>
-    </>
+    </MainLayout>
   );
 };
 

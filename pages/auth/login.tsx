@@ -5,6 +5,7 @@ import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import { signIn, getCsrfToken } from 'next-auth/react';
+import Auth from '../../components/Layouts/Auth';
 
 interface FormLogin {
   username: string,
@@ -34,7 +35,7 @@ export default function Login({ csrfToken }: any) {
   };
 
   return (
-    <>
+    <Auth>
       <Head>
         <title>Login</title>
       </Head>
@@ -95,7 +96,7 @@ export default function Login({ csrfToken }: any) {
           </div>
         </form>
       </div>
-    </>
+    </Auth>
   );
 }
 
