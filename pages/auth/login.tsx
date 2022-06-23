@@ -28,11 +28,12 @@ export default function Login({ csrfToken }: any) {
   } = useForm<FormLogin>({
     resolver: yupResolver(schema),
   });
+  
   const onSubmit = ({username, password}: FormLogin) => {
     signIn('credentials', {
       username,
       password,
-      callbackUrl: 'http://localhost:3000'
+      callbackUrl: `${window.location.origin}`
     })
   };
 
