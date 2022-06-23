@@ -5,6 +5,11 @@ import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 
+interface FormLogin {
+  username: string,
+  password: string
+}
+
 const schema = yup
   .object({
     username: yup.string().required(),
@@ -17,10 +22,10 @@ export default function Login() {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm({
+  } = useForm<FormLogin>({
     resolver: yupResolver(schema),
   });
-  const onSubmit = (data: Record<string, any>) => console.log(data);
+  const onSubmit = (data: FormLogin) => console.log(data);
 
   return (
     <>
