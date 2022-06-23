@@ -4,6 +4,7 @@ import Button from '../../components/Button/Button';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
+import { signIn, getCsrfToken } from 'next-auth/react';
 
 interface FormLogin {
   username: string,
@@ -17,7 +18,7 @@ const schema = yup
   })
   .required();
 
-export default function Login() {
+export default function Login({ csrfToken }: any) {
   const {
     register,
     handleSubmit,
@@ -25,7 +26,12 @@ export default function Login() {
   } = useForm<FormLogin>({
     resolver: yupResolver(schema),
   });
-  const onSubmit = (data: FormLogin) => console.log(data);
+  const onSubmit = ({username, password}: FormLogin) => {
+    signIn('credentials', {
+      username,
+      password
+    })
+  };
 
   return (
     <>
@@ -37,6 +43,7 @@ export default function Login() {
           className="w-full sm:w-3/12 mx-auto rounded-lg border p-6"
           onSubmit={handleSubmit(onSubmit)}
         >
+          <input name="csrfToken" type="hidden" defaultValue={csrfToken} />
           <div>
             <h1 className="text-3xl font-semibold">Login</h1>
             <p className="text-gray-500 mt-1">Please enter your credentials</p>
@@ -90,4 +97,12 @@ export default function Login() {
       </div>
     </>
   );
+}
+
+export async function getServerSideProps(context: any) {
+  return {
+    props: {
+      csrfToken: await getCsrfToken(context),
+    },
+  }
 }

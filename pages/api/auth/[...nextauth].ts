@@ -46,6 +46,9 @@ export default NextAuth({
       },
     }),
   ],
+  pages: {
+    signIn: '/auth/login',
+  },
   callbacks: {
     jwt: ({ token, user }) => {
       if (user) {
