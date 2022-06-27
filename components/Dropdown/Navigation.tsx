@@ -1,4 +1,4 @@
-import styles from './Nav.module.css'
+import styles from './Navigation.module.css'
 import Link from 'next/link'
 import React, { RefObject, useState } from 'react'
 

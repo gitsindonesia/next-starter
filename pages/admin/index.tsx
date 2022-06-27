@@ -1,25 +1,25 @@
 import Admin from '../../components/Layouts/Admin';
-import Nav from '../../components/Dropdown/Nav'
+import Navigation from '../../components/Dropdown/Navigation'
 const Dashboard = () => {
     return (
         <Admin>
-            <Nav hasSubItem={true}>
+            <Navigation hasSubItem={true}>
                 {{
                     title: 'Has Treview',
                     items: 
                         <>
-                            <Nav>
+                            <Navigation>
                                 Test
-                            </Nav>
-                            <Nav>
+                            </Navigation>
+                            <Navigation>
                                 Test
-                            </Nav>
-                            <Nav>
+                            </Navigation>
+                            <Navigation>
                                 Test
-                            </Nav>
+                            </Navigation>
                         </>
                 }}
-            </Nav>
+            </Navigation>
             <p>Dashboard</p>
         </Admin>
     )
