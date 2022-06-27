@@ -1,0 +1,13 @@
+.treeview {
+	height: 0;
+	overflow: hidden;
+	transition: height 0.25s ease-out;
+}
+
+.treeviewButtonActive{
+    @apply bg-gray-600 bg-opacity-10 text-white font-bold;
+}
+
+.treeviewButton{
+	@apply py-3 pr-4 pl-10 flex items-center text-sm text-gray-200 transition-colors duration-300;
+}
