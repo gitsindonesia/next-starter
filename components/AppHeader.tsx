@@ -1,5 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
+import { Menu } from "@headlessui/react";
+import Button from "./Button/Button";
 
 const AppHeader = () => {
     return (
@@ -22,6 +24,9 @@ const AppHeader = () => {
                         </Link>
                         <Link href="/">
                             <a className="px-3 py-2 hover:bg-zinc-500 rounded-lg">Calendars</a>
+                        </Link>
+                        <Link href="/">
+                            <Button className="bg-zinc-500 border-0 !text-sm !rounded-lg text-white">Test</Button>
                         </Link>
                     </div>
                     </div>

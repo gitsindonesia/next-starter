@@ -5,7 +5,14 @@ import NavigationItem from './NavigationItem'
 import AppContext from '../../store/AppContext'
 import { useRouter } from 'next/router'
 
-const Nav = ({children = 'Link', hasSubItem = false, href = '/'}:any) => {
+export interface Nav {
+    children: any,
+    hasSubItem: boolean,
+    href: string
+}
+
+const Nav = ({children = 'Link', hasSubItem = false, href = '/'}:Nav) => {
+    
     const [height, setHeight] = useState<number | string>(0);
     const [showSub, setShowSub] = useState<boolean>(false);
     const { showSidebar } = useContext(AppContext);
