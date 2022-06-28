@@ -5,9 +5,9 @@
 }
 
 .treeviewButtonActive{
-    @apply bg-gray-600 bg-opacity-10 text-white font-bold;
+    @apply bg-blue-400 font-bold;
 }
 
 .treeviewButton{
-	@apply py-3 pr-4 pl-10 flex items-center text-sm text-gray-200 transition-colors duration-300;
+	@apply flex gap-x-2 w-full px-4 py-3 hover:bg-zinc-600 rounded-md cursor-pointer items-center text-sm text-gray-200 transition-colors duration-300;
 }
