@@ -9,9 +9,9 @@ export interface SidebarInterface {
 const Sidebar = ({children}: SidebarInterface) => {
     const { toggleSidebar, showSidebar } = useContext(AppContext);
 
-    function showHideSidebar(){
-        toggleSidebar();
-    }
+  function showHideSidebar() {
+    toggleSidebar();
+  }
 
     return (
         <div className={'fixed top-0 min-h-screen left-0 transition-all duration-500 text-white bg-zinc-700 z-20' + (!showSidebar ? 'w-0 md:w-20' : 'w-4/5 md:w-72')}>
