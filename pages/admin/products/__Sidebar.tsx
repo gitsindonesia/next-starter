@@ -1,14 +1,15 @@
 import Sidebar from "../../../components/Sidebar/Sidebar"
 import Navigation from "../../../components/Navigation/Navigation";
 import { mainMenu } from "../../../routes"
+import { RoutesInterface } from "../../../routes";
 
 export default function SidebarPage () {
-    const subMenu = mainMenu.find(sub => sub.path === '/admin/products');
+    const subMenu = mainMenu?.find((sub: RoutesInterface) => sub.path === '/admin/products'); // change the equal depending on page parent directory
 
     return (
         <Sidebar>{{
             title: 'Products',
-            menus: subMenu?.children.map(menu => {
+            menus: subMenu?.children?.map(menu => {
                 if (menu.children) {
                     return (
                         <Navigation hasSubItem={true} href={menu.path}>

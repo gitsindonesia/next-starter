@@ -1,8 +1,19 @@
-export const mainMenu = [
+import { BeakerIcon } from '@heroicons/react/solid'
+
+export type RoutesInterface = {
+    path?: string,
+    title?: string,
+    name?: string,
+    icon?: JSX.Element,
+    children?: RoutesInterface[]
+}
+
+export const mainMenu: RoutesInterface[] = [
     {
         path: '/admin',
         title: 'Main',
         name: 'main', // route for main menu
+        icon: <BeakerIcon />,
         children: [ // route for sub main menu
             {
                 path: '/admin',
