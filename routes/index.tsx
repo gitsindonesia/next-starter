@@ -1,4 +1,4 @@
-import { DocumentTextIcon, FolderRemoveIcon, TemplateIcon, TrashIcon, UsersIcon } from '@heroicons/react/solid'
+import { DocumentTextIcon, FolderRemoveIcon, TemplateIcon, TrashIcon, UserGroupIcon, UsersIcon } from '@heroicons/react/solid'
 
 export type RoutesInterface = {
     path?: string,
@@ -34,6 +34,7 @@ export const mainMenu: RoutesInterface[] = [
             {
                 path: '/admin/user/', // add '/' on ending of the string if the pat has a children
                 title: 'Manage User',
+                icon: <UserGroupIcon width={20} />,
                 children: [
                     {
                         path: '/',

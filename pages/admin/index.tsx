@@ -6,7 +6,9 @@ const Dashboard = ({children}: any) => {
         <Admin>
             {{ 
                 aside: <SidebarPage/>,
-                main: <p>Dashboard</p>
+                main: <>
+                    
+                </>
             }}
             
         </Admin>

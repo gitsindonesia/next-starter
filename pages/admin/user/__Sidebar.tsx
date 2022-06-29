@@ -12,7 +12,7 @@ export default function SidebarPage () {
             menus: subMenu?.children?.map(menu => {
                 if (menu.children) {
                     return (
-                        <Navigation hasSubItem={true} href={menu.path}>
+                        <Navigation hasSubItem={true} href={menu.path} icon={menu.icon}>
                             {{
                                 title: menu.title,
                                 items: menu.children.map(child => {
@@ -21,7 +21,7 @@ export default function SidebarPage () {
                                     )
                                 })
                             }}
-                    </Navigation>
+                        </Navigation>
                     )
                 }
                 return (

@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import AppContext from "../../store/AppContext";
 import Image from "next/image";
+import { ChevronLeftIcon } from "@heroicons/react/solid";
 
 export interface SidebarInterface {
     children: any
@@ -31,7 +32,8 @@ const Sidebar = ({children}: SidebarInterface) => {
             }
             {
                 children?.button ||
-                <button onClick={showHideSidebar} className="rounded-full p-3 h-[34px] w-[34px] bg-zinc-700 border border-white absolute -right-4">
+                <button onClick={showHideSidebar} className="rounded-full h-[34px] w-[34px] bg-zinc-700 border border-white absolute flex items-center justify-center z-40 shadow-lg -right-4">
+                  <ChevronLeftIcon className={!showSidebar ? 'transition-transform transform rotate-180': ''} width={20} />
                 </button>
             }
             </div>

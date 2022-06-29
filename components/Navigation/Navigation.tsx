@@ -4,6 +4,7 @@ import React, { RefObject, useContext, useState } from 'react'
 import NavigationItem from './NavigationItem'
 import AppContext from '../../store/AppContext'
 import { useRouter } from 'next/router'
+import { UserGroupIcon } from '@heroicons/react/solid'
 
 export interface Nav {
     children?: any,
@@ -43,35 +44,40 @@ const Nav = ({children = 'Link', hasSubItem = false, href = '/', icon}:Nav) => {
         <div className='text-sm'>
             {
                 hasSubItem && 
-                    <div className='flex flex-col w-full'>                
-                        <div
-                        onClick={toggle}
-                            className={`
-                                flex items-center justify-between w-full
-                                hover:bg-zinc-500
-                                px-4 py-3 rounded-md
-                                duration-300 whitespace-nowrap mb-2 cursor-pointer
-                             ${ router.pathname.includes(href) ? styles.treeviewButtonActive : '' }`}
-                            
-                        >
-                            {children.title}
-                            <span
-                                className={'icon ml-auto transition-transform duration-300 dark:text-white' + (showSub? 'transform rotate-180': '')}
-                            >
-                                <svg
-                                    className="fill-current"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    height="20"
-                                    viewBox="0 0 24 24"
-                                    width="20"
+                    <div className='flex flex-col w-full'>   
+                        <div onClick={toggle} className='flex items-center gap-x-2 w-full
+                                    hover:bg-zinc-500
+                                    px-4 py-3 rounded-md
+                                    duration-300 whitespace-nowrap mb-2 cursor-pointer'>
+                            {icon ?? <span className='h-4 w-4 rounded-full border border-white'></span> }
+                            {
+                                showSidebar &&
+                                <div
+                                    className={`
+                                        flex items-center justify-between w-full
+                                    ${ router.pathname.includes(href) ? styles.treeviewButtonActive : '' }`}
+                                    
                                 >
-                                    <path d="M0 0h24v24H0V0z" fill="none" />
-                                    <path
-                                        d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"
-                                    />
-                                </svg>
-                            </span>
-                        </div>
+                                    {children.title}
+                                        <span
+                                            className={'icon ml-auto transition-transform duration-300 dark:text-white' + (showSub? 'transform rotate-180': '')}
+                                        >
+                                            <svg
+                                                className="fill-current"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                height="20"
+                                                viewBox="0 0 24 24"
+                                                width="20"
+                                            >
+                                                <path d="M0 0h24v24H0V0z" fill="none" />
+                                                <path
+                                                    d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"
+                                                />
+                                            </svg>
+                                        </span>
+                                </div>
+                            }
+                        </div>             
                         <ul
                             style={ulStyles}
                             ref={ulRef}
