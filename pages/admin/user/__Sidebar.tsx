@@ -8,7 +8,7 @@ export default function SidebarPage () {
 
     return (
         <Sidebar>{{
-            title: 'Users',
+            title: 'Users',  // Edit the title of sidebar
             menus: subMenu?.children?.map(menu => {
                 if (menu.children) {
                     return (
@@ -17,7 +17,7 @@ export default function SidebarPage () {
                                 title: menu.title,
                                 items: menu.children.map(child => {
                                     return (
-                                        <Navigation href={child.path}>{ child.title }</Navigation>
+                                        <Navigation icon={child.icon} href={child.path}>{ child.title }</Navigation>
                                     )
                                 })
                             }}
@@ -25,7 +25,7 @@ export default function SidebarPage () {
                     )
                 }
                 return (
-                    <Navigation href={menu.path}>{ menu.title }</Navigation>
+                    <Navigation icon={menu.icon} href={menu.path}>{ menu.title }</Navigation>
                 )
             })
         }}</Sidebar>

@@ -8,10 +8,11 @@ import { useRouter } from 'next/router'
 export interface Nav {
     children?: any,
     hasSubItem?: boolean,
-    href?: string
+    href?: string,
+    icon?: JSX.Element
 }
 
-const Nav = ({children = 'Link', hasSubItem = false, href = '/'}:Nav) => {
+const Nav = ({children = 'Link', hasSubItem = false, href = '/', icon}:Nav) => {
     
     const [height, setHeight] = useState<number | string>(0);
     const [showSub, setShowSub] = useState<boolean>(false);
@@ -87,8 +88,8 @@ const Nav = ({children = 'Link', hasSubItem = false, href = '/'}:Nav) => {
                     <Link href={href ?? '/'} passHref>
                         <NavigationItem className={`${styles.treeviewButton} ${(router.pathname == href ? styles.treeviewButtonActive : '')}`}>
                             {
-                                children.icon || 
-                                <span className='h-4 w-4 rounded-full border border-white'></span>
+                                !icon ? <span className='h-4 w-4 rounded-full border border-white'></span> 
+                                : icon
                             }
                             {
                                 showSidebar &&
