@@ -1,9 +1,13 @@
 import Admin from "../../../components/Layouts/Admin";
-
+import __Sidebar from './__Sidebar'
 const User = () => {
     return (
         <Admin>
-            <div>User</div>
+            {{
+                aside: <__Sidebar></__Sidebar>,
+
+                main: <div>Dashboard User</div>
+            }}
         </Admin>
     )
 }

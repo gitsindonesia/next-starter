@@ -6,9 +6,9 @@ import AppContext from '../../store/AppContext'
 import { useRouter } from 'next/router'
 
 export interface Nav {
-    children: any,
-    hasSubItem: boolean,
-    href: string
+    children?: any,
+    hasSubItem?: boolean,
+    href?: string
 }
 
 const Nav = ({children = 'Link', hasSubItem = false, href = '/'}:Nav) => {

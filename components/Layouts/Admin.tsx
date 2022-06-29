@@ -8,13 +8,13 @@ const Admin = ( {children}: any ) => {
     return (
         <div>
             <aside>
-                <Sidebar></Sidebar>
+                {children.aside}
             </aside>
             <main className={'transition-all duration-500 md:px-10 px-5 pb-20 relative ' + (!showSidebar ? 'md:ml-20 ml-0' : 'md:ml-72 ml-4/5')}>
                 <header>
                     <AppHeader />
                 </header>
-                <div>{ children }</div>
+                <div>{ children.main }</div>
             </main>
             <footer>
                 Footer

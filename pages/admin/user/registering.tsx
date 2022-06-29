@@ -1,9 +1,12 @@
 import Admin from "../../../components/Layouts/Admin";
-
+import SidebarPage from "./__Sidebar";
 const UserRegistering = () => {
     return (
         <Admin>
-            <div>Registering</div>
+            {{
+                aside: <SidebarPage />,
+                main: <div>Registering</div>
+            }}
         </Admin>
     )
 }
