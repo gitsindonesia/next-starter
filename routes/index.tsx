@@ -1,4 +1,4 @@
-import { DocumentTextIcon, FolderRemoveIcon, TemplateIcon, TrashIcon, UserGroupIcon, UsersIcon } from '@heroicons/react/solid'
+import { DocumentTextIcon, FolderRemoveIcon, TemplateIcon, UserGroupIcon, UsersIcon } from '@heroicons/react/solid'
 
 export type RoutesInterface = {
     path?: string,

@@ -27,8 +27,8 @@ const Sidebar = ({children}: SidebarInterface) => {
                 />
             }
             {
-                children?.title || 
-                <p>Admin</p>
+                showSidebar && (children?.title || 
+                <p>Admin</p>)
             }
             {
                 children?.button ||
