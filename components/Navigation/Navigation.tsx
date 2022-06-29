@@ -4,7 +4,6 @@ import React, { RefObject, useContext, useState } from 'react'
 import NavigationItem from './NavigationItem'
 import AppContext from '../../store/AppContext'
 import { useRouter } from 'next/router'
-import { UserGroupIcon } from '@heroicons/react/solid'
 
 export interface Nav {
     children?: any,
@@ -45,19 +44,14 @@ const Nav = ({children = 'Link', hasSubItem = false, href = '/', icon}:Nav) => {
             {
                 hasSubItem && 
                     <div className='flex flex-col w-full'>   
-                        <div onClick={toggle} className='flex items-center gap-x-2 w-full
+                        <div onClick={toggle} className={`flex items-center gap-x-2 w-full
                                     hover:bg-zinc-500
                                     px-4 py-3 rounded-md
-                                    duration-300 whitespace-nowrap mb-2 cursor-pointer'>
+                                    duration-300 whitespace-nowrap mb-2 cursor-pointer ${ router.pathname.includes(href) ? styles.treeviewButtonActive : '' }`}>
                             {icon ?? <span className='h-4 w-4 rounded-full border border-white'></span> }
                             {
                                 showSidebar &&
-                                <div
-                                    className={`
-                                        flex items-center justify-between w-full
-                                    ${ router.pathname.includes(href) ? styles.treeviewButtonActive : '' }`}
-                                    
-                                >
+                                <div className='flex items-center justify-between w-full'>
                                     {children.title}
                                         <span
                                             className={'icon ml-auto transition-transform duration-300 dark:text-white' + (showSub? 'transform rotate-180': '')}
