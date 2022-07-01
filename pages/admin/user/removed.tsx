@@ -22,9 +22,9 @@ const UserRemoved = () => {
             {{
                 aside: <SidebarPage />,
                 main: <>
-                <Breadcrumb crumbs={crumbs} divider="/" />
-                <PageTitle>Removed User</PageTitle>
-            </>
+                    <Breadcrumb crumbs={crumbs} divider="/" />
+                    <PageTitle>Removed User</PageTitle>
+                </>
             }}
         </Admin>
     )

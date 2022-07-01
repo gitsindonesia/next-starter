@@ -6,7 +6,7 @@ import AppHeader from "../AppHeader"
 const Admin = ( {children}: any ) => {
     const { showSidebar } = useContext(AppContext);
     return (
-        <div>
+        <div className="bg-gray-100 min-h-screen">
             <aside>
                 {children.aside}
             </aside>
