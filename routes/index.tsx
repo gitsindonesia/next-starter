@@ -1,7 +1,7 @@
 import { DocumentTextIcon, FolderRemoveIcon, TemplateIcon, UserGroupIcon, UsersIcon } from '@heroicons/react/solid'
 
 export type RoutesInterface = {
-    path?: string,
+    path?: string | any,
     title?: string,
     name?: string,
     icon?: JSX.Element,
