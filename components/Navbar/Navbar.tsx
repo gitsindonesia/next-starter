@@ -1,4 +1,11 @@
 import Image from "next/image";
+import Button from '../Button/Button'
+import { Dropdown, DropdownItem } from "../Dropdown/Dropdown";
+import { SearchIcon, BellIcon } from '@heroicons/react/outline'
+import { Menu, Transition } from '@headlessui/react'
+import { Fragment } from 'react'
+import Link from 'next/link'
+
 
 interface NavbarInterfaces {
     flying?: boolean,
@@ -9,7 +16,8 @@ interface NavbarInterfaces {
     roundedClassName?: string,
     showLogo?: boolean,
     logoSrc?: string,
-    children?: any
+    children?: any,
+    showProfileButton?: boolean
 }
 
 const Navbar = ({ 
@@ -20,6 +28,7 @@ const Navbar = ({
     roundedClassName = 'rounded-lg',
     showLogo = true,
     logoSrc = '/images/logo.png',
+    showProfileButton = true,
     children
 }: NavbarInterfaces) => {
     return (
@@ -37,9 +46,22 @@ const Navbar = ({
                                 height={23.22}
                             />
                         }
-                    <div className="flex items-center text-white gap-4 text-sm">
-                        { children.menus }
+                        <div className="flex items-center text-white gap-4 text-sm">
+                            { children.menus }
+                        </div>
                     </div>
+                    <div className="flex items-center gap-2">
+                        {
+                            children.toolbar ||
+                            <>
+                            <Button outlined={false} className="w-10 h-10 border-0 rounded-full !text-zinc-300 hover:bg-zinc-900 bg-zinc-800 !p-2">
+                                <SearchIcon width={50} />
+                            </Button>
+                            <Button outlined={false} className="w-10 h-10 border-0 rounded-full !text-zinc-300 hover:bg-zinc-900 bg-zinc-800 !p-2">
+                                <BellIcon width={50} />
+                            </Button>
+                            </>
+                        }
                     </div>
                 </div>
             </div>

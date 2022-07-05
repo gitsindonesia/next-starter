@@ -3,6 +3,8 @@ import SidebarCtx from "../Sidebar/context"
 import Link from "next/link";
 import { mainMenu, RoutesInterface } from '../../routes'
 import Navbar from "../Navbar/Navbar"
+import Button from '../Button/Button'
+import { SearchIcon, BellIcon } from '@heroicons/react/outline'
 
 const Admin = ( {children, rootClassName}: any ) => {
     const { showSidebar } = useContext(SidebarCtx);
@@ -25,6 +27,14 @@ const Admin = ( {children, rootClassName}: any ) => {
                                         )
                                     })
                                 }
+                            </>,
+                            toolbar: <>
+                                <Button outlined={false} className="w-10 h-10 border-0 rounded-full !text-zinc-300 hover:bg-zinc-900 bg-zinc-800 !p-2">
+                                    <SearchIcon width={50} />
+                                </Button>
+                                <Button outlined={false} className="w-10 h-10 border-0 rounded-full !text-zinc-300 hover:bg-zinc-900 bg-zinc-800 !p-2">
+                                    <BellIcon width={50} />
+                                </Button>
                             </>
                         }}
                     </Navbar>
