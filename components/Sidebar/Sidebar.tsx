@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import AppContext from "../../store/AppContext";
+import SidebarCtx  from "./context/index";
 import Image from "next/image";
 import { ChevronLeftIcon } from "@heroicons/react/solid";
 
@@ -8,7 +8,7 @@ export interface SidebarInterface {
 }
 
 const Sidebar = ({children}: SidebarInterface) => {
-    const { toggleSidebar, showSidebar } = useContext(AppContext);
+    const { toggleSidebar, showSidebar } = useContext(SidebarCtx);
 
   function showHideSidebar() {
     toggleSidebar();

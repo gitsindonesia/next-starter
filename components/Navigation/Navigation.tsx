@@ -2,21 +2,27 @@ import styles from './Navigation.module.css'
 import Link from 'next/link'
 import React, { RefObject, useContext, useState } from 'react'
 import NavigationItem from './NavigationItem'
-import AppContext from '../../store/AppContext'
 import { useRouter } from 'next/router'
 
-export interface Nav {
+export interface NavigationProps {
     children?: any,
     hasSubItem?: boolean,
-    href?: string,
-    icon?: JSX.Element
+    href?: any,
+    icon?: JSX.Element,
+    sidebarCtx: any,
+    ulRef?: any
 }
 
-const Nav = ({children = 'Link', hasSubItem = false, href = '/', icon}:Nav) => {
+const Navigation = ({
+    children = 'Link', 
+    hasSubItem = false, 
+    href = '/', icon, 
+    sidebarCtx
+}: NavigationProps) => {
     
     const [height, setHeight] = useState<number | string>(0);
     const [showSub, setShowSub] = useState<boolean>(false);
-    const { showSidebar } = useContext(AppContext);
+    const { showSidebar } = useContext(sidebarCtx);
     const router = useRouter();
 
     const ulRef = React.createRef<HTMLUListElement>();
@@ -103,4 +109,4 @@ const Nav = ({children = 'Link', hasSubItem = false, href = '/', icon}:Nav) => {
     )
 }
 
-export default Nav
+export default Navigation

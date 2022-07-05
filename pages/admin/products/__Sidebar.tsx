@@ -2,6 +2,7 @@ import Sidebar from "../../../components/Sidebar/Sidebar"
 import Navigation from "../../../components/Navigation/Navigation";
 import { mainMenu } from "../../../routes"
 import { RoutesInterface } from "../../../routes";
+import SidebarCtx from "../../../components/Sidebar/context";
 
 export default function SidebarPage () {
     const subMenu = mainMenu?.find((sub: RoutesInterface) => sub.path === '/admin/products'); // change the equal depending on page parent directory
@@ -12,12 +13,12 @@ export default function SidebarPage () {
             menus: subMenu?.children?.map(menu => {
                 if (menu.children) {
                     return (
-                        <Navigation hasSubItem={true} href={menu.path} icon={menu.icon}>
+                        <Navigation sidebarCtx={SidebarCtx} hasSubItem={true} href={menu.path} icon={menu.icon}>
                             {{
                                 title: menu.title,
                                 items: menu.children.map(child => {
                                     return (
-                                        <Navigation icon={child.icon} href={child.path}>{ child.title }</Navigation>
+                                        <Navigation sidebarCtx={SidebarCtx} icon={child.icon} href={child.path}>{ child.title }</Navigation>
                                     )
                                 })
                             }}
@@ -25,7 +26,7 @@ export default function SidebarPage () {
                     )
                 }
                 return (
-                    <Navigation icon={menu.icon} href={menu.path}>{ menu.title }</Navigation>
+                    <Navigation sidebarCtx={SidebarCtx} icon={menu.icon} href={menu.path}>{ menu.title }</Navigation>
                 )
             })
         }}</Sidebar>

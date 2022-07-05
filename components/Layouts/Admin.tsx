@@ -1,11 +1,11 @@
 import { useContext } from "react"
-import AppContext from "../../store/AppContext"
+import SidebarCtx from "../Sidebar/context"
 import Link from "next/link";
 import { mainMenu, RoutesInterface } from '../../routes'
 import Navbar from "../Navbar/Navbar"
 
 const Admin = ( {children, rootClassName}: any ) => {
-    const { showSidebar } = useContext(AppContext);
+    const { showSidebar } = useContext(SidebarCtx);
     return (
         <div className="bg-gray-100 min-h-screen">
             <aside>
