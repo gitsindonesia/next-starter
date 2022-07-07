@@ -4,8 +4,10 @@ import Card from '../../components/Card/Card';
 import { CalendarIcon, BookmarkAltIcon, DocumentSearchIcon, ShoppingCartIcon } from '@heroicons/react/outline'
 import { Breadcrumb } from '../../components/Breadcrumb/Breadcrumb';
 import PageTitle from '../../components/PageTitle';
+import { useSession } from 'next-auth/react';
 
 const Dashboard = ({children}: any) => {    
+    const { data: session } = useSession()
     const crumbs = [
         {
             path: '/',
@@ -47,6 +49,12 @@ const Dashboard = ({children}: any) => {
         </Admin>
     )
 }
+// Dashboard.auth = {
+//     role: 'admin',
+//     loading: 'Loading...', // can be JSX.Element,
+//     unauthorized: '/auth/login' // redirect to
+// }
+
 
 export default Dashboard;
 

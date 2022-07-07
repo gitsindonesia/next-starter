@@ -29,16 +29,16 @@ export default function Login({ csrfToken }: any) {
     resolver: yupResolver(schema),
   });
   
-  const onSubmit = ({username, password}: FormLogin) => {
-    signIn('credentials', {
+  const onSubmit = async ({username, password}: FormLogin) => {
+    const user = await signIn('credentials', {
       username,
       password,
-      callbackUrl: `${window.location.origin}`
-    })
+    });
   };
 
   return (
-    <Auth>
+    // <Auth>
+    <>
       <Head>
         <title>Login</title>
       </Head>
@@ -124,7 +124,8 @@ export default function Login({ csrfToken }: any) {
           </div>
         </div>
       </div>
-    </Auth>
+    </>
+    // </Auth>
   );
 }
 
