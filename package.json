@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@headlessui/react": "^1.6.4",
+    "@heroicons/react": "^1.0.6",
     "@hookform/resolvers": "^2.9.0",
     "@tanstack/react-table": "^8.0.0-beta.8",
     "next": "12.1.6",

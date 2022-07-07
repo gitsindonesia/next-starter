@@ -1,5 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
+import { mainMenu } from '../routes'
+import Button from "./Button/Button";
 
 const AppHeader = () => {
     return (
@@ -14,15 +16,15 @@ const AppHeader = () => {
                         height={23.22}
                     />
                     <div className="flex items-center text-white gap-4 text-sm">
-                        <Link href="/">
-                            <a className="px-3 py-2 hover:bg-zinc-500 rounded-lg">Team</a>
-                        </Link>
-                        <Link href="/">
-                            <a className="px-3 py-2 hover:bg-zinc-500 rounded-lg">Projects</a>
-                        </Link>
-                        <Link href="/">
-                            <a className="px-3 py-2 hover:bg-zinc-500 rounded-lg">Calendars</a>
-                        </Link>
+                        {
+                            mainMenu.map((menu, index) => {
+                                return (
+                                    <Link href={menu.path}>
+                                        <a className="px-3 py-2 hover:bg-zinc-500 rounded-lg">{menu.title}</a>
+                                    </Link>
+                                )
+                            })
+                        }
                     </div>
                     </div>
                 </div>

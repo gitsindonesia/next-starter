@@ -1,15 +1,15 @@
 import { createContext, useState } from "react";
 
-interface AppContextInterface {
+interface SidebarCtxInterface {
     showSidebar: boolean,
     toggleSidebar: any,
 }
-const AppContext = createContext<AppContextInterface>({
+const SidebarCtx = createContext<SidebarCtxInterface>({
     showSidebar: true,
     toggleSidebar: (): void => {}
 });
 
-export function AppContextProvider({children}: any){
+export function SidebarCtxProvider({children}: any){
     const [showSidebar, setShowSidebar] = useState<boolean>(true);
 
     const toggleSidebar = () => {
@@ -22,8 +22,8 @@ export function AppContextProvider({children}: any){
     }
 
     return (
-        <AppContext.Provider value={context}>{children}</AppContext.Provider>
+        <SidebarCtx.Provider value={context}>{children}</SidebarCtx.Provider>
     );
 }
 
-export default AppContext;
+export default SidebarCtx;
