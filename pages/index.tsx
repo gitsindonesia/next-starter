@@ -1,6 +1,7 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import MainLayout from '../components/Layouts/MainLayout';
+import MainLayout from '../components/Layouts/MainLayout'
+import Link from 'next/link';
 
 const Home: NextPage = () => {
   return (
@@ -14,7 +15,7 @@ const Home: NextPage = () => {
           <h1 className="text-4xl font-semibold">
             Welcome to your <span className="text-blue-600">Next</span> Project!
           </h1>
-
+          <Link href="/admin">Admin</Link>
           <p className="mt-5">You are ready to rock!</p>
         </div>
       </div>

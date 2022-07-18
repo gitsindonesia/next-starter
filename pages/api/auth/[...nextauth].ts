@@ -39,7 +39,15 @@ export default NextAuth({
           credentials?.username === 'john' &&
           credentials.password === 'secret'
         ) {
-          return { id: 1, name: 'J Smith', email: 'jsmith@example.com' };
+          return { id: 1, name: 'J Smith', email: 'jsmith@example.com', role: ['guest'] };
+        }
+        else if( credentials.username === 'admin' && credentials.password === 'admin123' ){
+          return {
+            id: 100,
+            name: 'Admin',
+            email: 'admin@example.com',
+            role: ['admin']
+          }
         }
 
         return null;
@@ -50,18 +58,25 @@ export default NextAuth({
     signIn: '/auth/login',
   },
   callbacks: {
-    jwt: ({ token, user }) => {
+    async jwt({ token, user }) {
       if (user) {
-        token.id = user.id;
+        token.id = user.id
+        token.role = user.role
       }
-
-      return token;
+      return token
     },
-    session: ({ session, user }) => {
-      if (user) {
-        session.id = session.id;
+    async session({ session, token }) {
+      // Send properties to the client, like an access_token from a provider.
+      if (token) {
+        session.id = token.id
+        session.role = token.role
       }
-      return session;
-    },
+      return session
+    }
   },
+  secret: process.env.SECRET,
+  jwt: {
+    secret: process.env.SECRET,
+    encryption: true,
+  }
 });
