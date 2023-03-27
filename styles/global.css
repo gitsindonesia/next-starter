@@ -2,6 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-body{
-    font-family: 'Poppins', sans-serif;
+.main-layout.min-height {
+	min-height: 85vh;
 }

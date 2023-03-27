@@ -1,9 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true,
-  images: {
-    domains: ['gits.id'],
-  },
-};
+	reactStrictMode: true,
+	experimental: {
+		appDir: true
+	},
+	images: {
+		domains: ['gits.id']
+	}
+}
 
-module.exports = nextConfig;
+module.exports = nextConfig
