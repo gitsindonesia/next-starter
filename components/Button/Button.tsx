@@ -1,6 +1,9 @@
 import { useMemo } from '@storybook/addons'
 import React from 'react'
 
+// Lodash
+import omit from 'lodash.omit'
+
 export type ButtonVariants =
 	| 'default'
 	| 'primary'
@@ -126,7 +129,7 @@ const Button = ({
 				blockClass,
 				className
 			].join(' ')}
-			{...props}
+			{...omit(props, ['outlined'])}
 		>
 			{children}
 		</button>

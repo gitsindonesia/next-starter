@@ -12,6 +12,12 @@ import { AdminSidebarContext } from '@/contexts'
 // Icons
 import { ChevronLeftIcon } from '@heroicons/react/solid'
 
+// Routes
+import { mainMenu } from '@/routes'
+
+// Components
+import Navigation from '@/components/Navigation/Navigation'
+
 const Sidebar = () => {
 	// Admin Sidebar Context
 	const { toggleSidebar, showSidebar } = useContext(AdminSidebarContext)
@@ -44,7 +50,48 @@ const Sidebar = () => {
 						/>
 					</button>
 				</div>
-				<ul className='px-4 overflow-hidden'>{/*  */}</ul>
+				<ul className='px-4 overflow-hidden'>
+					{mainMenu.map((menu, index) => {
+						if (menu.children && menu.children.length > 0) {
+							return (
+								<Navigation
+									key={`parent-menu-${index}`}
+									sidebarCtx={AdminSidebarContext}
+									hasSubItem
+									href={menu.path}
+									icon={menu.icon}
+								>
+									{{
+										title: menu.title,
+										items: menu.children.map((child, index) => {
+											return (
+												<Navigation
+													key={`children-menu-${index}`}
+													sidebarCtx={AdminSidebarContext}
+													icon={child.icon}
+													href={child.path}
+												>
+													{child.title}
+												</Navigation>
+											)
+										})
+									}}
+								</Navigation>
+							)
+						} else {
+							return (
+								<Navigation
+									key={`parent-menu-${index}`}
+									sidebarCtx={AdminSidebarContext}
+									icon={menu.icon}
+									href={menu.path}
+								>
+									{menu.title}
+								</Navigation>
+							)
+						}
+					})}
+				</ul>
 			</div>
 		</aside>
 	)

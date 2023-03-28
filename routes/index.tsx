@@ -7,7 +7,7 @@ import {
 } from '@heroicons/react/solid'
 
 export type RoutesInterface = {
-	path?: string | any
+	path?: string
 	title?: string
 	name?: string
 	icon?: JSX.Element

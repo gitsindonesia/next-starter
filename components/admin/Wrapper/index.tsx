@@ -11,7 +11,7 @@ import Navbar from '@/components/Navbar/Navbar'
 import Button from '@/components/Button/Button'
 
 // Routes
-import { mainMenu, RoutesInterface } from '@/routes'
+import { mainMenu } from '@/routes'
 
 // Contexts
 import { AdminSidebarContext } from '@/contexts/AdminSidebar'
@@ -43,7 +43,7 @@ const Wrapper = memo(({ children }: IWrapperProps) => {
 									return (
 										<Link
 											key={menu.path}
-											href={menu.path}
+											href={menu.path as string}
 											className='px-3 py-2 hover:bg-zinc-500 rounded-lg'
 										>
 											{menu.title}

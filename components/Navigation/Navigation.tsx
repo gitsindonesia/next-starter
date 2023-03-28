@@ -1,8 +1,17 @@
-import styles from './Navigation.module.css'
+'use-client'
+
+// React
+import React, { useContext, useState } from 'react'
+
+// Next
+import { usePathname } from 'next/navigation'
 import Link from 'next/link'
-import React, { RefObject, useContext, useState } from 'react'
-import NavigationItem from './NavigationItem'
-import { useRouter } from 'next/router'
+
+// Contexts
+import { IAdminSidebarContext } from '@/contexts'
+
+// Style Modules
+import styles from './Navigation.module.css'
 
 export interface NavigationProps {
 	children?: any
@@ -22,8 +31,8 @@ const Navigation = ({
 }: NavigationProps) => {
 	const [height, setHeight] = useState<number | string>(0)
 	const [showSub, setShowSub] = useState<boolean>(false)
-	const { showSidebar } = useContext(sidebarCtx)
-	const router = useRouter()
+	const { showSidebar } = useContext(sidebarCtx) as IAdminSidebarContext
+	const pathname = usePathname()
 
 	const ulRef = React.createRef<HTMLUListElement>()
 
@@ -51,14 +60,9 @@ const Navigation = ({
 				<div className='flex flex-col w-full'>
 					<div
 						onClick={toggle}
-						className={`flex items-center gap-x-2 w-full
-                                    hover:bg-zinc-500
-                                    px-4 py-3 rounded-md
-                                    duration-300 whitespace-nowrap mb-2 cursor-pointer ${
-																			router.pathname.includes(href)
-																				? styles.treeviewButtonActive
-																				: ''
-																		}`}
+						className={`flex items-center gap-x-2 w-full hover:bg-zinc-500 px-4 py-3 rounded-md duration-300 whitespace-nowrap mb-2 cursor-pointer ${
+							pathname?.includes(href) ? styles.treeviewButtonActive : ''
+						}`}
 					>
 						{icon ?? (
 							<span className='h-4 w-4 rounded-full border border-white'></span>
@@ -97,19 +101,18 @@ const Navigation = ({
 			)}
 			{!hasSubItem && (
 				<li className='mb-2 whitespace-nowrap'>
-					<Link href={href ?? '/'} passHref>
-						<NavigationItem
-							className={`${styles.treeviewButton} ${
-								router.pathname == href ? styles.treeviewButtonActive : ''
-							}`}
-						>
-							{!icon ? (
-								<span className='h-4 w-4 rounded-full border border-white'></span>
-							) : (
-								icon
-							)}
-							{showSidebar && <span>{children}</span>}
-						</NavigationItem>
+					<Link
+						href={href ?? '/'}
+						className={`${styles.treeviewButton} ${
+							pathname == href ? styles.treeviewButtonActive : ''
+						}`}
+					>
+						{!icon ? (
+							<span className='h-4 w-4 rounded-full border border-white'></span>
+						) : (
+							icon
+						)}
+						{showSidebar && <span>{children}</span>}
 					</Link>
 				</li>
 			)}
