@@ -2,6 +2,7 @@
 
 // Next
 import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 
 // React
 import { memo } from 'react'
@@ -26,9 +27,11 @@ const validationSchema = yup
 	.required()
 
 const AuthLoginForm = memo(() => {
+	// Router
+	const router = useRouter()
+
 	// Form
 	const {
-		register,
 		handleSubmit,
 		control,
 		formState: { errors }
@@ -49,7 +52,7 @@ const AuthLoginForm = memo(() => {
 	 * @return {Promise<void>} Promise<void>
 	 */
 	const onSubmit = handleSubmit(async (form): Promise<void> => {
-		alert(JSON.stringify(form))
+		router.replace('/admin')
 	})
 
 	return (
