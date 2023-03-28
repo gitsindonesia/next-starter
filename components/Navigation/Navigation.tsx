@@ -1,7 +1,7 @@
 'use-client'
 
 // React
-import React, { useContext, useState } from 'react'
+import { useContext, useState, useMemo, createRef } from 'react'
 
 // Next
 import { usePathname } from 'next/navigation'
@@ -33,8 +33,11 @@ const Navigation = ({
 	const [showSub, setShowSub] = useState<boolean>(false)
 	const { showSidebar } = useContext(sidebarCtx) as IAdminSidebarContext
 	const pathname = usePathname()
+	const _pathname = useMemo((): string => {
+		return pathname === '/admin' ? '/admin' : pathname || ''
+	}, [pathname])
 
-	const ulRef = React.createRef<HTMLUListElement>()
+	const ulRef = createRef<HTMLUListElement>()
 
 	const [ulStyles, setUlStyles] = useState({
 		height: height + 'px'
@@ -61,7 +64,7 @@ const Navigation = ({
 					<div
 						onClick={toggle}
 						className={`flex items-center gap-x-2 w-full hover:bg-zinc-500 px-4 py-3 rounded-md duration-300 whitespace-nowrap mb-2 cursor-pointer ${
-							pathname?.includes(href) ? styles.treeviewButtonActive : ''
+							_pathname === href ? styles.treeviewButtonActive : ''
 						}`}
 					>
 						{icon ?? (
@@ -104,7 +107,7 @@ const Navigation = ({
 					<Link
 						href={href ?? '/'}
 						className={`${styles.treeviewButton} ${
-							pathname == href ? styles.treeviewButtonActive : ''
+							_pathname === href ? styles.treeviewButtonActive : ''
 						}`}
 					>
 						{!icon ? (
