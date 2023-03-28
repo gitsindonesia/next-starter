@@ -1,6 +1,9 @@
 // React
 import { useMemo } from 'react'
 
+// Next
+import { Metadata } from 'next'
+
 // Components
 import Card from '@/components/Card/Card'
 import { Breadcrumb } from '@/components/Breadcrumb/Breadcrumb'
@@ -13,6 +16,11 @@ import {
 	DocumentSearchIcon,
 	ShoppingCartIcon
 } from '@heroicons/react/outline'
+
+export const metadata: Metadata = {
+	title: 'Dashboard - GITS Next Starter',
+	description: 'Welcome to dashboard of GITS Next Starter'
+}
 
 export default function Admin() {
 	// Hook

@@ -1,10 +1,5 @@
-import {
-	DocumentTextIcon,
-	FolderRemoveIcon,
-	TemplateIcon,
-	UserGroupIcon,
-	UsersIcon
-} from '@heroicons/react/solid'
+// Icons
+import { TemplateIcon } from '@heroicons/react/solid'
 
 export type RoutesInterface = {
 	path?: string
@@ -18,9 +13,8 @@ export const mainMenu: RoutesInterface[] = [
 	{
 		path: '/admin',
 		title: 'Main',
-		name: 'main', // route for main menu,
+		name: 'main',
 		children: [
-			// route for sub main menu
 			{
 				path: '/admin',
 				title: 'Dashboard',
@@ -29,49 +23,25 @@ export const mainMenu: RoutesInterface[] = [
 		]
 	},
 	{
-		path: '/admin/user',
+		path: '/admin/users',
 		title: 'Users',
-		name: 'users', // route for main menu
+		name: 'users',
 		children: [
-			// route for sub main menu
 			{
-				path: '/admin/user',
-				title: 'Dashboard User',
+				path: '/admin/users',
+				title: 'User List',
 				icon: <TemplateIcon width={20} />
-			},
-			{
-				path: '/admin/user/', // add '/' on ending of the string if the pat has a children
-				title: 'Manage User',
-				icon: <UserGroupIcon width={20} />,
-				children: [
-					{
-						path: '/',
-						title: "User's Data",
-						icon: <UsersIcon width={20} />
-					},
-					{
-						path: '/admin/user/removed',
-						title: 'Removed Users',
-						icon: <FolderRemoveIcon width={20} />
-					},
-					{
-						path: '/admin/user/registering',
-						title: "User's Registering",
-						icon: <DocumentTextIcon width={20} />
-					}
-				]
 			}
 		]
 	},
 	{
 		path: '/admin/products',
 		title: 'Products',
-		name: 'products', // route for main menu
+		name: 'products',
 		children: [
-			// route for sub main menu
 			{
 				path: '/admin/products',
-				title: 'Dashboard Products',
+				title: 'Product List',
 				icon: <TemplateIcon width={20} />
 			}
 		]

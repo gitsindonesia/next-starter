@@ -20,7 +20,7 @@ const AppHeader = () => {
 								return (
 									<Link
 										key={menu.name}
-										href={menu.path}
+										href={menu.path as string}
 										className='px-3 py-2 hover:bg-zinc-500 rounded-lg'
 									>
 										{menu.title}
