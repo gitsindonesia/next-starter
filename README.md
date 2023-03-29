@@ -54,19 +54,19 @@ yarn lint:format
 
 ## Available commands for versioning
 
-Upgrade last semantic versioning 0.0.(0 <-- this)
+Upgrade patch semantic versioning 0.0.(0 <-- this)
 
 ```shell
 yarn version:patch
 ```
 
-Upgrade middle semantic versioning 0.(0 <--- this).0
+Upgrade minor semantic versioning 0.(0 <--- this).0
 
 ```shell
 yarn version:minor
 ```
 
-Upgrade middle semantic versioning (0 <--- this).0.0
+Upgrade major semantic versioning (0 <--- this).0.0
 
 ```shell
 yarn version:major
