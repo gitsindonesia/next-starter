@@ -1,6 +1,6 @@
 {
 	"name": "next-starter",
-	"version": "0.1.1",
+	"version": "0.1.2",
 	"private": true,
 	"scripts": {
 		"dev": "next dev",
@@ -9,9 +9,9 @@
 		"lint": "next lint",
 		"lint:fix": "eslint --fix '{app,components,lib,pages,assets}/**/*.{js,jsx,ts,tsx,json}'",
 		"lint:format": "prettier --write '{app,components,lib,pages,assets}/**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc",
-		"version:patch": "yarn version --patch --no-commit-hooks -m \"chore(version): %s\"",
-		"version:minor": "yarn version --minor --no-commit-hooks -m \"chore(version): %s\"",
-		"version:major": "yarn version --major --no-commit-hooks -m \"chore(version): %s\"",
+		"version:patch": "yarn version --patch -m \"chore(version): %s\"",
+		"version:minor": "yarn version --minor -m \"chore(version): %s\"",
+		"version:major": "yarn version --major -m \"chore(version): %s\"",
 		"storybook": "start-storybook -p 6006",
 		"build-storybook": "build-storybook"
 	},
