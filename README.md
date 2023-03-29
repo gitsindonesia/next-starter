@@ -4,29 +4,75 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Batteries Included
 
-- [Next Auth](https://next-auth.js.org/)
+- [shadcn UI](https://ui.shadcn.com/)
 - [Tailwind CSS](https://tailwindcss.com/)
-- [Headless UI](https://headlessui.dev/)
-- [Storybook](https://storybook.js.org/)
 - [React Hook Form](https://react-hook-form.com/)
-- [React Query](https://react-query.tanstack.com/)
-- [Iconify](https://docs.iconify.design/icon-components/react/)
+- [Storybook](https://storybook.js.org/)
 - Conventional Commits
 
-## Built-in Components
+## Installation
 
-- Button
-- Dropdown (Headless UI)
+1; Install dependencies using yarn
 
-## Getting Started
-
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
+```shell
+yarn
 ```
+
+---
+
+## Available commands for build
+
+Build next app
+
+```shell
+yarn build
+```
+
+---
+
+## Available commands for linting
+
+Run linter and will search for problems, but will not fix
+
+```shell
+yarn lint
+```
+
+Run linter and will search and try to fix the problems.
+
+```shell
+yarn lint:fix
+```
+
+Run linter and will call prettier to fix the code style.
+
+```shell
+yarn lint:format
+```
+
+---
+
+## Available commands for versioning
+
+Upgrade last semantic versioning 0.0.(0 <-- this)
+
+```shell
+yarn version:patch
+```
+
+Upgrade middle semantic versioning 0.(0 <--- this).0
+
+```shell
+yarn version:minor
+```
+
+Upgrade middle semantic versioning (0 <--- this).0.0
+
+```shell
+yarn version:major
+```
+
+---
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
