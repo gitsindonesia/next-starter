@@ -4,11 +4,13 @@ import { memo } from 'react'
 // Next
 import Image from 'next/image'
 
+// Components
+import { Buttons } from './components'
+
 const RootHero = memo(() => {
 	return (
 		<section
-			className='flex sm:py-20 py-14 sm:h-[calc(100vh-90px)] items-center hero relative
-    bg-white dark:bg-neutral-900 px-4 2xl:px-0
+			className='flex sm:py-20 py-14 sm:h-[calc(100vh-90px)] items-center hero relative bg-white dark:bg-neutral-900 px-4 2xl:px-0
   '
 		>
 			<div className='items-center flex flex-col sm:flex-row gap-10 md:gap-4 container mx-auto px-6 md:px-0'>
@@ -24,33 +26,11 @@ const RootHero = memo(() => {
 						to create a professional web app.
 					</p>
 
-					<div className='flex justify-center md:justify-start gap-2 md:gap-4 mt-10'>
-						{/* <button
-							className='btn-getting-started'
-							color='dark'
-							rounded
-							href='https://gitsindonesia.github.io/ui-component/'
-							new-tab
-							size='lg'
-						>
-							Get started
-						</button>
-						<button
-							rounded
-							text
-							href='https://github.com/gitsindonesia/ui-component'
-							new-tab
-							size='lg'
-							suffix-icon='ri:arrow-right-s-line'
-							className='btn-open-github'
-						>
-							Open on GitHub
-						</button> */}
-					</div>
+					<Buttons />
 				</div>
 				<div className='w-full sm:w-5/12 order-1 md:order-2'>
 					<Image
-						src={require('@/assets/images/logo-white.webp')}
+						src={require('@/assets/images/logo-white.webp').default}
 						alt='Logo White'
 						className='w-full h-full'
 						width={450}
@@ -64,4 +44,4 @@ const RootHero = memo(() => {
 
 RootHero.displayName = 'RootHero'
 
-export { RootHero }
+export default RootHero

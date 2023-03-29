@@ -8,7 +8,7 @@ const nextConfig = {
 		appDir: true
 	},
 	images: {
-		domains: ['gits.id']
+		domains: ['localhost']
 	},
 	sassOptions: {
 		includePaths: [path.join(__dirname, 'assets/styles')]

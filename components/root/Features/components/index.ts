@@ -1,1 +1,1 @@
-export * from './FeatureItem'
+export { default as FeatureItem } from './FeatureItem'

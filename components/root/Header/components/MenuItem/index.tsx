@@ -1,3 +1,5 @@
+'use client'
+
 // React
 import { memo } from 'react'
 
@@ -22,4 +24,4 @@ const MenuItem = memo(({ text, to }: IMenuItemProps) => {
 
 MenuItem.displayName = 'MenuItem'
 
-export { MenuItem }
+export default MenuItem

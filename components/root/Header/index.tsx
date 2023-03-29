@@ -15,22 +15,15 @@ const menus = [
 	{
 		text: 'Features',
 		to: '/#features'
-	},
-	{
-		text: 'i18n',
-		to: '/i18n'
 	}
 ]
 
 const RootHeader = memo(() => {
 	return (
 		<div className='w-full' style={{ background: '#171717' }}>
-			<div
-				className='hidden lg:container mx-auto py-4 lg:flex gap-4 xl:gap-8
-      items-center py-1 justify-between '
-			>
+			<div className='hidden lg:container mx-auto py-4 lg:flex gap-4 xl:gap-8 items-center justify-between '>
 				<Image
-					src={require('@/assets/images/logo-white.webp')}
+					src={require('@/assets/images/logo-white.webp').default}
 					width={80}
 					height={36}
 					alt={'GITS-White'}
@@ -44,10 +37,7 @@ const RootHeader = memo(() => {
 					</ul>
 				</nav>
 
-				<div className='flex items-center gap-1'>
-					{/* <ColorModeSwitcher /> */}
-					{/* <LangSwitcher /> */}
-				</div>
+				<div className='flex items-center gap-1'>{/*  */}</div>
 			</div>
 		</div>
 	)
@@ -55,4 +45,4 @@ const RootHeader = memo(() => {
 
 RootHeader.displayName = 'RootHeader'
 
-export { RootHeader }
+export default RootHeader

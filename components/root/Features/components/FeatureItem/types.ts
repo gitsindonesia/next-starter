@@ -1,5 +1,5 @@
 export interface IFeatureItemProps {
-	icon: string
+	icon: any
 	name: string
 	description: string
 }

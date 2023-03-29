@@ -11,33 +11,33 @@ const RootFeatures = memo(() => {
 			{
 				name: 'React',
 				description: 'The latest and greatest React',
-				icon: 'logo-react.webp'
+				icon: require(`@/assets/images/logo-react.webp`).default
 			},
 			{
 				name: 'Next 13',
 				description: 'The latest and greatest Next',
-				icon: 'logo-next.png'
+				icon: require(`@/assets/images/logo-next.png`).default
 			},
 			{
 				name: 'Tailwind CSS',
 				description: 'A utility-first CSS framework',
-				icon: 'logo-tailwind.png'
+				icon: require(`@/assets/images/logo-tailwind.png`).default
 			},
 			{
 				name: 'Customization',
 				description: 'Customizable application with CSS Properties',
-				icon: 'logo-css3.png'
+				icon: require(`@/assets/images/logo-css3.png`).default
 			},
 			{
 				name: 'TypeScript',
 				description: 'A typed superset of JavaScript that scales',
-				icon: 'logo-typescript.png'
+				icon: require(`@/assets/images/logo-typescript.png`).default
 			},
 			{
 				name: 'Linting',
 				description:
 					'Code analysis tool that helps maintain code quality and consistency',
-				icon: 'logo-eslint.png'
+				icon: require(`@/assets/images/logo-eslint.png`).default
 			}
 		]
 	}, [])
@@ -59,7 +59,7 @@ const RootFeatures = memo(() => {
 				<div className='mt-10 sm:mt-24'>
 					<div className='grid grid-cols-1 sm:grid-cols-3 gap-8'>
 						{features.map(feature => (
-							<FeatureItem key={feature.name} {...feature} />
+							<FeatureItem {...feature} key={feature.name} />
 						))}
 					</div>
 				</div>
@@ -70,4 +70,4 @@ const RootFeatures = memo(() => {
 
 RootFeatures.displayName = 'RootFeatures'
 
-export { RootFeatures }
+export default RootFeatures

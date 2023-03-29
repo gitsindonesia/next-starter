@@ -21,4 +21,4 @@ const RootFooter = memo(() => {
 
 RootFooter.displayName = 'RootFooter'
 
-export { RootFooter }
+export default RootFooter

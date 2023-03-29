@@ -2,7 +2,13 @@
 import { Metadata } from 'next'
 
 // Components
-import { RootHero, RootFeatures, RootCta, RootHeader } from '@/components'
+import {
+	RootHero,
+	RootFeatures,
+	RootCta,
+	RootHeader,
+	RootFooter
+} from '@/components'
 
 export const metadata: Metadata = {
 	title: 'GITS Next Starter'
@@ -15,6 +21,7 @@ export default function RootPage() {
 			<RootHero />
 			<RootFeatures />
 			<RootCta />
+			{/* <RootFooter /> */}
 		</>
 	)
 }

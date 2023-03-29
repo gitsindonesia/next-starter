@@ -1,5 +1,10 @@
+'use client'
+
 // React
 import { memo } from 'react'
+
+// Components
+import { BaseButton } from '@/components'
 
 const RootCta = memo(() => {
 	return (
@@ -13,15 +18,7 @@ const RootCta = memo(() => {
 						Our demo is open publicly to everyone.
 					</p>
 				</div>
-				{/* <button
-					rounded
-					href='https://gits-nuxt-starter.vercel.app/'
-					new-tab
-					color='dark'
-					size='lg'
-				>
-					Try demo
-				</button> */}
+				<BaseButton>Try demo</BaseButton>
 			</div>
 		</section>
 	)
@@ -29,4 +26,4 @@ const RootCta = memo(() => {
 
 RootCta.displayName = 'RootCta'
 
-export { RootCta }
+export default RootCta

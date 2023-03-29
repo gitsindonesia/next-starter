@@ -1,3 +1,5 @@
+'use client'
+
 // React
 import { memo } from 'react'
 
@@ -12,13 +14,13 @@ const Logo = memo((props: ILogoProps) => {
 		<>
 			<Image
 				{...props}
-				src='/logo.webp'
+				src={require('@/assets/images/logo-black.webp')}
 				alt='Logo Base'
 				className='dark:hidden'
 			/>
 			<Image
 				{...props}
-				src='/logo-white.webp'
+				src={require('@/assets/images/logo-white.webp')}
 				alt='Logo White'
 				className='hidden dark:block'
 			/>
@@ -28,4 +30,4 @@ const Logo = memo((props: ILogoProps) => {
 
 Logo.displayName = 'Logo'
 
-export { Logo }
+export default Logo
