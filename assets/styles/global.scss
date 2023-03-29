@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+	--body-bg-color: theme('colors.white');
+	--body-text-color: theme('colors.gray.800');
+}
+
+body {
+	background: var(--body-bg-color);
+	color: var(--body-text-color);
+
+	@apply transition-colors duration-300;
+}
+
+.dark {
+	body {
+		--body-bg-color: theme('colors.neutral.900');
+		--body-text-color: theme('colors.neutral.200');
+	}
+
+	// change default app bar dark mode bg color
+	.app-bar-default {
+		--app-bar-bg-color: theme('colors.neutral.900') !important;
+	}
+}

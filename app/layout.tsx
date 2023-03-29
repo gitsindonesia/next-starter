@@ -1,5 +1,5 @@
 // Styles
-import '@/styles/global.css'
+import '@/assets/styles/global.scss'
 
 // React
 import { ReactNode } from 'react'
