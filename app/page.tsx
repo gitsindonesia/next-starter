@@ -21,7 +21,7 @@ export default function RootPage() {
 			<RootHero />
 			<RootFeatures />
 			<RootCta />
-			{/* <RootFooter /> */}
+			<RootFooter />
 		</>
 	)
 }
