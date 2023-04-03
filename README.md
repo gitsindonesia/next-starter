@@ -10,6 +10,30 @@ This is Next Starter, using version 13 that you can see [here](https://beta.next
 - [Storybook](https://storybook.js.org/)
 - Conventional Commits
 
+---
+
+## Folder Structure
+
+Project structure for this react native starter
+
+```javascript
+|app                       // Entry point for the app.
+|assets                    // Assets, images, fonts, styles, etc.
+|   |___images
+|   |______icon            // Contain icon for the project
+|   |______{another}       // Another related to images
+|
+|components                // Contain global components or specific for some features
+|utils                     // Contain utility that reusable for another component or it-self
+|pages                     // Contain pages (next 13 it will be full using app dir)
+|redux                     // Contain redux / state management
+|redux                     // Contain types for features inside the app
+```
+
+If you want to create folder outside declared above, you can create, but, don't forget to update this docs.
+
+---
+
 ## Installation
 
 1; Install dependencies using yarn
