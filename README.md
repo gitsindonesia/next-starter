@@ -6,9 +6,46 @@ This is Next Starter, using version 13 that you can see [here](https://beta.next
 
 - [shadcn UI](https://ui.shadcn.com/)
 - [Tailwind CSS](https://tailwindcss.com/)
+- [Redux Toolkit](https://redux-toolkit.js.org/)
 - [React Hook Form](https://react-hook-form.com/)
 - [Storybook](https://storybook.js.org/)
 - Conventional Commits
+
+---
+
+## Folder Structure
+
+Project structure for this Next starter
+
+```javascript
+|app                       // Entry point for the app.
+|
+|assets                    // Assets, images, fonts, styles, etc.
+|   |___images
+|   |______icon            // Contain icon for the project.
+|   |______{another}       // Another related to images.
+|
+|components                // Contain global components or specific for some features.
+|   |___base               // Contain base components or specific for some features.
+|   |___{another}          // Another related to images.
+|
+|store                     // Contain redux / state management.
+|   |___{feature-name}     // Contain base components or specific for some features.
+|   |______rtk             // Contain rtk for specific feature.
+|   |______slice           // Contain slice for specific feature.
+|
+|types                     // Contain types definition for the app.
+|   |___{app}              // Contain types definition for the app feature.
+|   |______api.type.ts     // Type definition for the API (response from Back-End).
+|   |______common.type.ts  // Type definition common things inside Front-End.
+|   |___{feature-name}     // Contain types definition for specific feature.
+|
+|{another}                 // Another folder that have specific purpose.
+```
+
+If you want to create folder outside declared above, you can create, but, don't forget to update this docs.
+
+---
 
 ## Installation
 

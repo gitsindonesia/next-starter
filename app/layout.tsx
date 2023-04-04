@@ -8,6 +8,9 @@ import { ReactNode } from 'react'
 import { Metadata } from 'next'
 import { Poppins } from 'next/font/google'
 
+// Redux Provider
+import ReduxProvider from '@/store/ReduxProvider'
+
 export const metadata: Metadata = {
 	title: 'GITS Next Starter',
 	description: 'Welcome to GITS Next Starter'
@@ -28,7 +31,9 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang='en'>
-			<body className={poppins.className}>{children}</body>
+			<body className={poppins.className}>
+				<ReduxProvider>{children}</ReduxProvider>
+			</body>
 		</html>
 	)
 }

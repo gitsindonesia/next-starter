@@ -5,8 +5,8 @@ import { Metadata } from 'next'
 import {
 	RootHero,
 	RootFeatures,
-	RootCta,
 	RootHeader,
+	RootCounter,
 	RootFooter
 } from '@/components'
 
@@ -20,8 +20,8 @@ export default function RootPage() {
 			<RootHeader />
 			<RootHero />
 			<RootFeatures />
-			<RootCta />
-			{/* <RootFooter /> */}
+			<RootCounter />
+			<RootFooter />
 		</>
 	)
 }

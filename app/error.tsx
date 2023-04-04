@@ -1,7 +1,7 @@
 'use client'
 
 // Types
-import { INextPageError } from '@/types/next.type'
+import { INextPageError } from '@/types'
 
 export default function Error({ error, reset }: INextPageError) {
 	return (

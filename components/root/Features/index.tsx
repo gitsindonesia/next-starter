@@ -24,9 +24,9 @@ const RootFeatures = memo(() => {
 				icon: require(`@/assets/images/logo-tailwind.png`).default
 			},
 			{
-				name: 'Customization',
-				description: 'Customizable application with CSS Properties',
-				icon: require(`@/assets/images/logo-css3.png`).default
+				name: 'Redux Toolkit',
+				description: 'Slice and RTK integrated',
+				icon: require(`@/assets/images/logo-redux.png`).default
 			},
 			{
 				name: 'TypeScript',
