@@ -26,7 +26,6 @@ Project structure for this Next starter
 |
 |components                // Contain global components or specific for some features.
 |   |___base               // Contain base components or specific for some features.
-|   |___public             // Contain base components for feature inside public layout.
 |   |___{another}          // Another related to images.
 |
 |store                     // Contain redux / state management.
