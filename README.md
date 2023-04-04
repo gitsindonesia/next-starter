@@ -18,8 +18,6 @@ Project structure for this Next starter
 
 ```javascript
 |app                       // Entry point for the app.
-|   |______(public)        // Contain all pages for public page / landing page.
-|   |______back-office     // Contain all pages for back office / admin page.
 |
 |assets                    // Assets, images, fonts, styles, etc.
 |   |___images
