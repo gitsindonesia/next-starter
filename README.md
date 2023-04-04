@@ -6,6 +6,7 @@ This is Next Starter, using version 13 that you can see [here](https://beta.next
 
 - [shadcn UI](https://ui.shadcn.com/)
 - [Tailwind CSS](https://tailwindcss.com/)
+- [Redux Toolkit](https://redux-toolkit.js.org/)
 - [React Hook Form](https://react-hook-form.com/)
 - [Storybook](https://storybook.js.org/)
 - Conventional Commits
