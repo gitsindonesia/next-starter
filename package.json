@@ -13,7 +13,8 @@
     "version:minor": "yarn version --minor && yarn config set version-git-message \"chore(version): %s\"",
     "version:major": "yarn version --major && yarn config set version-git-message \"chore(version): %s\"",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@heroicons/react": "^1.0.6",
