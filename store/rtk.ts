@@ -6,7 +6,7 @@ import { fetchBaseQuery, createApi } from '@reduxjs/toolkit/query/react'
 
 const baseQuery = fetchBaseQuery({
   baseUrl: process.env.NEXT_PUBLIC_API_URL,
-  prepareHeaders(headers, { getState }) {
+  prepareHeaders(headers) {
     // const rootState = getState() as IRootState
 
     // Handle if you have any header send to the server

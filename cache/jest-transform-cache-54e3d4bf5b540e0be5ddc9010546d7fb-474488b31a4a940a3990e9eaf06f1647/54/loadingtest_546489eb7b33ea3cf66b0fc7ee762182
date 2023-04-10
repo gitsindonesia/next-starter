@@ -1,0 +1,22 @@
+c20cddf509ca7db4ca91f6d46dba2767
+// React Testing Library
+"use strict";
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+const _jsxRuntime = require("react/jsx-runtime");
+require("@testing-library/jest-dom");
+const _react = require("@testing-library/react");
+const _loading = /*#__PURE__*/ _interopRequireDefault(require("C:/projects-windows/GITS/Starter/next-starter/app/loading"));
+function _interopRequireDefault(obj) {
+    return obj && obj.__esModule ? obj : {
+        default: obj
+    };
+}
+describe("App loading", ()=>{
+    it("Loading should be rendered", ()=>{
+        (0, _react.render)(/*#__PURE__*/ (0, _jsxRuntime.jsx)(_loading.default, {}));
+    });
+});
+
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIkM6XFxwcm9qZWN0cy13aW5kb3dzXFxHSVRTXFxTdGFydGVyXFxuZXh0LXN0YXJ0ZXJcXF9fdGVzdHNfX1xcYXBwXFxsb2FkaW5nLnRlc3QudHN4Il0sInNvdXJjZXNDb250ZW50IjpbIi8vIFJlYWN0IFRlc3RpbmcgTGlicmFyeVxyXG5pbXBvcnQgJ0B0ZXN0aW5nLWxpYnJhcnkvamVzdC1kb20nXHJcbmltcG9ydCB7IHJlbmRlciB9IGZyb20gJ0B0ZXN0aW5nLWxpYnJhcnkvcmVhY3QnXHJcblxyXG4vLyBBcHAgQ29tcG9uZW50c1xyXG5pbXBvcnQgTG9hZGluZyBmcm9tICdAL2FwcC9sb2FkaW5nJ1xyXG5cclxuZGVzY3JpYmUoJ0FwcCBsb2FkaW5nJywgKCkgPT4ge1xyXG4gIGl0KCdMb2FkaW5nIHNob3VsZCBiZSByZW5kZXJlZCcsICgpID0+IHtcclxuICAgIHJlbmRlcig8TG9hZGluZyAvPilcclxuICB9KVxyXG59KVxyXG4iXSwibmFtZXMiOlsiZGVzY3JpYmUiLCJpdCIsInJlbmRlciIsIkxvYWRpbmciXSwibWFwcGluZ3MiOiJBQUFBLHdCQUF3Qjs7Ozs7O1FBQ2pCO3VCQUNnQjs4REFHSDs7Ozs7O0FBRXBCQSxTQUFTLGVBQWUsSUFBTTtJQUM1QkMsR0FBRyw4QkFBOEIsSUFBTTtRQUNyQ0MsSUFBQUEsYUFBTSxnQkFBQyxxQkFBQ0MsZ0JBQU87SUFDakI7QUFDRiJ9

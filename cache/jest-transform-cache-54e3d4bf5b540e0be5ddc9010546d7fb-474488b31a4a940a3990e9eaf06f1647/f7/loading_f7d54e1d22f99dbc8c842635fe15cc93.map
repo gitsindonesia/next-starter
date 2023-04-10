@@ -1,0 +1,1 @@
+{"version":3,"sources":["C:\\projects-windows\\GITS\\Starter\\next-starter\\app\\loading.tsx"],"sourcesContent":["const Loading = () => {\r\n  return <h1>Loading...</h1>\r\n}\r\n\r\nexport default Loading\r\n"],"names":["Loading","h1"],"mappings":";;;;+BAIA;;aAAA;;;AAJA,MAAMA,UAAU,IAAM;IACpB,qBAAO,qBAACC;kBAAG;;AACb;MAEA,WAAeD"}
