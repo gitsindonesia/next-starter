@@ -10,16 +10,16 @@ import Link from 'next/link'
 import { IMenuItemProps } from './types'
 
 const MenuItem = memo(({ text, to }: IMenuItemProps) => {
-	return (
-		<li>
-			<Link
-				href={to}
-				className='text-base px-3 py-2 rounded-full dark:text-gray-400 dark:hover:text-gray-100 text-gray-600 hover:text-gray-900 flex items-center gap-2'
-			>
-				{text}
-			</Link>
-		</li>
-	)
+  return (
+    <li>
+      <Link
+        href={to}
+        className='text-base px-3 py-2 rounded-full dark:text-gray-400 dark:hover:text-gray-100 text-gray-600 hover:text-gray-900 flex items-center gap-2'
+      >
+        {text}
+      </Link>
+    </li>
+  )
 })
 
 MenuItem.displayName = 'MenuItem'

@@ -10,7 +10,7 @@ import { Provider } from 'react-redux'
 import { IReduxProvider } from './types'
 
 const ReduxProvider = ({ children }: IReduxProvider) => {
-	return <Provider store={store}>{children}</Provider>
+  return <Provider store={store}>{children}</Provider>
 }
 
 export default ReduxProvider

@@ -1,3 +1,56 @@
 {
-	"extends": ["next/core-web-vitals"]
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:prettier/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react-hooks/recommended",
+    "next/core-web-vitals"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "env": {
+    "node": true,
+    "browser": true,
+    "es2021": true,
+    "jest": true
+  },
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "plugins": ["react", "@typescript-eslint", "react-hooks"],
+  "ignorePatterns": [
+    "!.*",
+    "dist",
+    "node_modules",
+    "src/test",
+    "__tests__",
+    "__mocks__",
+    "next.config.js",
+    "jest.config.js",
+    "README.md"
+  ],
+  "rules": {
+    "@typescript-eslint/no-unused-vars": "error",
+    // JSX
+    "react/react-in-jsx-scope": "off",
+    // Hook
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "error",
+    "prettier/prettier": [
+      "error",
+      {
+        "endOfLine": "auto"
+      }
+    ],
+    "@typescript-eslint/no-var-requires": "off"
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  }
 }

@@ -1,4 +1,4 @@
 export interface IMenuItemProps {
-	text: string
-	to: string
+  text: string
+  to: string
 }

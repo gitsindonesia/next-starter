@@ -3,5 +3,5 @@ import { twMerge } from 'tailwind-merge'
 
 // For shadcn UI
 export function cn(...inputs: ClassValue[]) {
-	return twMerge(clsx(inputs))
+  return twMerge(clsx(inputs))
 }
