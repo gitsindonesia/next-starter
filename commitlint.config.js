@@ -16,6 +16,9 @@ module.exports = {
         'test',
         'enhancement'
       ]
-    ]
+    ],
+    'type-case': [2, 'always', 'lowerCase'],
+    'type-empty': [2, 'never'],
+    'scope-case': [2, 'always', 'lowerCase']
   }
 }
