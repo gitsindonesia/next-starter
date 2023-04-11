@@ -18,6 +18,9 @@ This is Next Starter, using version 13 that you can see [here](https://beta.next
 Project structure for this Next starter
 
 ```javascript
+|__mocks__                 // Contain all mocks for test
+|__tests__                 // Contain all test inside the project
+|
 |app                       // Entry point for the app.
 |
 |assets                    // Assets, images, fonts, styles, etc.
