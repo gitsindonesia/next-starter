@@ -17,15 +17,15 @@ export const listenerMiddleware = createListenerMiddleware()
 
 // Root Store
 const store = configureStore({
-	reducer: rootReducer,
-	middleware: getDefaultMiddleware => {
-		const middleware = getDefaultMiddleware()
-			.prepend(listenerMiddleware.middleware)
-			.concat(emptySplitApi.middleware)
+  reducer: rootReducer,
+  middleware: getDefaultMiddleware => {
+    const middleware = getDefaultMiddleware()
+      .prepend(listenerMiddleware.middleware)
+      .concat(emptySplitApi.middleware)
 
-		return middleware
-	},
-	devTools: process.env.NODE_ENV === 'development'
+    return middleware
+  },
+  devTools: process.env.NODE_ENV === 'development'
 })
 
 setupListeners(store.dispatch)

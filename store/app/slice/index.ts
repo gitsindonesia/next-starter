@@ -1,8 +1,8 @@
 // Interfaces
 import {
-	IAppSliceHandleCounterAttrs,
-	EAppSliceHandleCounterType,
-	IAppSliceState
+  IAppSliceHandleCounterAttrs,
+  EAppSliceHandleCounterType,
+  IAppSliceState
 } from './types'
 
 // Redux Toolkit
@@ -12,26 +12,26 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { TRootState } from '@/store/reducer'
 
 const initialState: IAppSliceState = {
-	counter: 0
+  counter: 0
 }
 
 const appSlice = createSlice({
-	name: 'app',
-	initialState,
-	reducers: {
-		app_HANDLE_COUNTER: (
-			state,
-			{ payload }: PayloadAction<IAppSliceHandleCounterAttrs>
-		): void => {
-			if (payload.type === EAppSliceHandleCounterType.INCREASE) {
-				state.counter = state.counter += 1
-			}
+  name: 'app',
+  initialState,
+  reducers: {
+    app_HANDLE_COUNTER: (
+      state,
+      { payload }: PayloadAction<IAppSliceHandleCounterAttrs>
+    ): void => {
+      if (payload.type === EAppSliceHandleCounterType.INCREASE) {
+        state.counter = state.counter += 1
+      }
 
-			if (payload.type === EAppSliceHandleCounterType.DECREASE) {
-				state.counter = state.counter -= 1
-			}
-		}
-	}
+      if (payload.type === EAppSliceHandleCounterType.DECREASE) {
+        state.counter = state.counter -= 1
+      }
+    }
+  }
 })
 
 // Actions / Mutations

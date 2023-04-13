@@ -5,17 +5,17 @@ import { fetchBaseQuery, createApi } from '@reduxjs/toolkit/query/react'
 // import { IRootState } from '@/plugins/redux/reducer'
 
 const baseQuery = fetchBaseQuery({
-	baseUrl: process.env.NEXT_PUBLIC_API_URL,
-	prepareHeaders(headers, { getState }) {
-		// const rootState = getState() as IRootState
+  baseUrl: process.env.NEXT_PUBLIC_API_URL,
+  prepareHeaders(headers) {
+    // const rootState = getState() as IRootState
 
-		// Handle if you have any header send to the server
-		// if (rootState.auth.auth_token.token) {
-		//   headers.set('Authorization', `Bearer ${rootState.auth.auth_token.token}`)
-		// }
+    // Handle if you have any header send to the server
+    // if (rootState.auth.auth_token.token) {
+    //   headers.set('Authorization', `Bearer ${rootState.auth.auth_token.token}`)
+    // }
 
-		return headers
-	}
+    return headers
+  }
 })
 
 /* NOTE: Open this if u want to refresh token */
@@ -63,9 +63,9 @@ const baseQuery = fetchBaseQuery({
 // }
 
 export const emptySplitApi = createApi({
-	// If you want to use interceptor
-	// baseQuery: baseQueryWithReauth,
-	baseQuery,
-	endpoints: () => ({}),
-	refetchOnFocus: true
+  // If you want to use interceptor
+  // baseQuery: baseQueryWithReauth,
+  baseQuery,
+  endpoints: () => ({}),
+  refetchOnFocus: true
 })

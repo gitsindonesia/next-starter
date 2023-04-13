@@ -1,4 +1,4 @@
 export interface INextPageError {
-	error: Error
-	reset: () => void
+  error: Error
+  reset: () => void
 }

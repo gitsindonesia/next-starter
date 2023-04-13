@@ -10,22 +10,22 @@ import Image from 'next/image'
 import { ILogoProps } from './types'
 
 const Logo = memo((props: ILogoProps) => {
-	return (
-		<>
-			<Image
-				{...props}
-				src={require('@/assets/images/logo-black.webp')}
-				alt='Logo Base'
-				className='dark:hidden'
-			/>
-			<Image
-				{...props}
-				src={require('@/assets/images/logo-white.webp')}
-				alt='Logo White'
-				className='hidden dark:block'
-			/>
-		</>
-	)
+  return (
+    <div>
+      <Image
+        {...props}
+        src={require('@/assets/images/logo-black.webp')}
+        alt='Logo Base'
+        className='dark:hidden'
+      />
+      <Image
+        {...props}
+        src={require('@/assets/images/logo-white.webp')}
+        alt='Logo White'
+        className='hidden dark:block'
+      />
+    </div>
+  )
 })
 
 Logo.displayName = 'Logo'

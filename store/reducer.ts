@@ -8,8 +8,8 @@ import app from '@/store/app/slice'
 import { emptySplitApi } from './rtk'
 
 const rootReducer = combineReducers({
-	app,
-	[emptySplitApi.reducerPath]: emptySplitApi.reducer
+  app,
+  [emptySplitApi.reducerPath]: emptySplitApi.reducer
 })
 
 export type TRootState = ReturnType<typeof rootReducer>

@@ -12,28 +12,30 @@ import { Poppins } from 'next/font/google'
 import ReduxProvider from '@/store/ReduxProvider'
 
 export const metadata: Metadata = {
-	title: 'GITS Next Starter',
-	description: 'Welcome to GITS Next Starter'
+  title: 'GITS Next Starter',
+  description: 'Welcome to GITS Next Starter'
 }
 
 const poppins = Poppins({
-	weight: ['400', '700'],
-	subsets: ['latin'],
-	variable: '--font-poppins'
+  weight: ['400', '700'],
+  subsets: ['latin'],
+  variable: '--font-poppins'
 })
 
-export default function RootLayout({
-	// Layouts must accept a children prop.
-	// This will be populated with nested layouts or pages
-	children
+const RootLayout = ({
+  // Layouts must accept a children prop.
+  // This will be populated with nested layouts or pages
+  children
 }: {
-	children: ReactNode
-}) {
-	return (
-		<html lang='en'>
-			<body className={poppins.className}>
-				<ReduxProvider>{children}</ReduxProvider>
-			</body>
-		</html>
-	)
+  children: ReactNode
+}) => {
+  return (
+    <html lang='en'>
+      <body className={poppins.className}>
+        <ReduxProvider>{children}</ReduxProvider>
+      </body>
+    </html>
+  )
 }
+
+export default RootLayout

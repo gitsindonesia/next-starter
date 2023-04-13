@@ -1,7 +1,7 @@
 module.exports = {
   stories: [
     '../components/**/*.stories.mdx',
-    '../components/**/*.stories.@(js|jsx|ts|tsx)',
+    '../components/**/*.stories.@(js|jsx|ts|tsx)'
   ],
   staticDirs: ['../public'],
   addons: [
@@ -16,21 +16,21 @@ module.exports = {
       name: '@storybook/addon-postcss',
       options: {
         postcssLoaderOptions: {
-          implementation: require('postcss'),
-        },
-      },
-    },
+          implementation: require('postcss')
+        }
+      }
+    }
   ],
   framework: '@storybook/react',
   core: {
-    builder: '@storybook/builder-webpack5',
+    builder: '@storybook/builder-webpack5'
   },
-  webpackFinal: async (config) => {
+  webpackFinal: async config => {
     config.module.rules.push({
       test: /\.scss$/,
-      use: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader'],
-    });
+      use: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader']
+    })
 
-    return config;
-  },
-};
+    return config
+  }
+}

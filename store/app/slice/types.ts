@@ -1,12 +1,12 @@
 export interface IAppSliceState {
-	counter: number
+  counter: number
 }
 
 export enum EAppSliceHandleCounterType {
-	INCREASE = 'INCREASE',
-	DECREASE = 'DECREASE'
+  INCREASE = 'INCREASE',
+  DECREASE = 'DECREASE'
 }
 
 export interface IAppSliceHandleCounterAttrs {
-	type: EAppSliceHandleCounterType
+  type: EAppSliceHandleCounterType
 }
