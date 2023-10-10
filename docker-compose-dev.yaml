@@ -1,0 +1,11 @@
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    container_name: gits-next-starter
+    ports:
+      - '3000:3000'
+    volumes:
+      - '/app/node_modules'
+      - './:/app'

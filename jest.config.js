@@ -10,7 +10,6 @@ const customJestConfig = {
   // on node 14.x coverage provider v8 offers good speed and more or less good report
   coverageProvider: 'v8',
   collectCoverageFrom: [
-    'components/**/*.tsx',
     'app/**/*.tsx',
     '!**/*.d.ts',
     '!**/node_modules/**',

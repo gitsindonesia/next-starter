@@ -1,17 +1,10 @@
-/** @type {import('next').NextConfig} */
-
 const path = require('path')
 
+/** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true,
-  experimental: {
-    appDir: true
-  },
-  images: {
-    domains: ['localhost']
-  },
+  output: 'standalone',
   sassOptions: {
-    includePaths: [path.join(__dirname, 'assets/styles')]
+    includePaths: [path.join(__dirname, '/app/_assets/styles')]
   }
 }
 

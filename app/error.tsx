@@ -1,7 +1,7 @@
 'use client'
 
 // Types
-import { INextPageError } from '@/types'
+import { INextPageError } from '@/app/_types'
 
 const Error = ({ error, reset }: INextPageError) => {
   return (
