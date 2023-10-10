@@ -6,9 +6,8 @@ import {
   RootHero,
   RootFeatures,
   RootHeader,
-  RootCounter,
   RootFooter
-} from '@/components'
+} from '@/app/_components'
 
 export const metadata: Metadata = {
   title: 'GITS Next Starter'
@@ -20,7 +19,6 @@ const RootPage = () => {
       <RootHeader />
       <RootHero />
       <RootFeatures />
-      <RootCounter />
       <RootFooter />
     </div>
   )

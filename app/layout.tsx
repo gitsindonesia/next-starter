@@ -1,5 +1,5 @@
 // Styles
-import '@/assets/styles/global.scss'
+import '@/app/_assets/styles/global.scss'
 
 // React
 import { ReactNode } from 'react'
@@ -7,9 +7,6 @@ import { ReactNode } from 'react'
 // Next
 import { Metadata } from 'next'
 import { Poppins } from 'next/font/google'
-
-// Redux Provider
-import ReduxProvider from '@/store/ReduxProvider'
 
 export const metadata: Metadata = {
   title: 'GITS Next Starter',
@@ -31,9 +28,7 @@ const RootLayout = ({
 }) => {
   return (
     <html lang='en'>
-      <body className={poppins.className}>
-        <ReduxProvider>{children}</ReduxProvider>
-      </body>
+      <body className={poppins.className}>{children}</body>
     </html>
   )
 }
