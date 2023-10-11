@@ -1,5 +1,5 @@
 // Components
-import { BaseSpin } from './_components'
+import { BaseSpin } from './_components/base'
 
 const Loading = () => {
   return (

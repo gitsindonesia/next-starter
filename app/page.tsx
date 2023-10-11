@@ -10,8 +10,9 @@ import {
   RootFeature,
   RootHeader,
   RootTodo,
+  RootZustand,
   RootFooter
-} from '@/app/_components'
+} from '@/app/_components/root'
 import Loading from './loading'
 
 // Antd
@@ -30,6 +31,7 @@ const RootPage = () => {
       <RootHeader />
       <RootHero />
       <RootFeature />
+      <RootZustand />
       <Suspense fallback={<Loading />}>
         <RootTodo />
       </Suspense>
