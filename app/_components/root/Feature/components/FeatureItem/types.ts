@@ -1,7 +1,7 @@
 // Image
 import { StaticImageData } from 'next/image'
 
-export interface IFeatureItemProps {
+export type TFeatureItemProps = {
   icon: StaticImageData
   name: string
   description: string

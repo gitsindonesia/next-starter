@@ -7,9 +7,9 @@ import { memo } from 'react'
 import Image from 'next/image'
 
 // Interfaces
-import { IFeatureItemProps } from './types'
+import { TFeatureItemProps } from './types'
 
-const FeatureItem = memo(({ icon, name, description }: IFeatureItemProps) => {
+const FeatureItem = memo(({ icon, name, description }: TFeatureItemProps) => {
   return (
     <div
       className='space-y-4 rounded-xl p-8 shadow-card hover:shadow-xl transition
@@ -28,4 +28,4 @@ const FeatureItem = memo(({ icon, name, description }: IFeatureItemProps) => {
 
 FeatureItem.displayName = 'FeatureItem'
 
-export default FeatureItem
+export { FeatureItem }

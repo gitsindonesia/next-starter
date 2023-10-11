@@ -1,4 +1,4 @@
-export { default as RootFeatures } from './Features'
-export { default as RootFooter } from './Footer'
-export { default as RootHeader } from './Header'
-export { default as RootHero } from './Hero'
+export * from './Feature'
+export * from './Footer'
+export * from './Header'
+export * from './Hero'

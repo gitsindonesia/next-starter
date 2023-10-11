@@ -4,7 +4,7 @@ import { Metadata } from 'next'
 // Components
 import {
   RootHero,
-  RootFeatures,
+  RootFeature,
   RootHeader,
   RootFooter
 } from '@/app/_components'
@@ -18,7 +18,7 @@ const RootPage = () => {
     <div>
       <RootHeader />
       <RootHero />
-      <RootFeatures />
+      <RootFeature />
       <RootFooter />
     </div>
   )

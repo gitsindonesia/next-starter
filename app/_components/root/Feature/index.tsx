@@ -47,7 +47,7 @@ const FEATURES = [
   }
 ]
 
-const RootFeatures = memo(() => {
+const RootFeature = memo(() => {
   return (
     <section
       id='features'
@@ -74,6 +74,6 @@ const RootFeatures = memo(() => {
   )
 })
 
-RootFeatures.displayName = 'RootFeatures'
+RootFeature.displayName = 'RootFeature'
 
-export default RootFeatures
+export { RootFeature }
