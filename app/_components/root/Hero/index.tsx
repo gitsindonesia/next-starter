@@ -5,7 +5,7 @@ import { memo } from 'react'
 import Image from 'next/image'
 
 // Components
-import { Buttons } from './components'
+import { ButtonItem } from './components'
 
 const RootHero = memo(() => {
   return (
@@ -26,7 +26,7 @@ const RootHero = memo(() => {
             to create a professional web app.
           </p>
 
-          <Buttons />
+          <ButtonItem />
         </div>
         <div className='w-full sm:w-5/12 order-1 md:order-2'>
           <Image
@@ -44,4 +44,4 @@ const RootHero = memo(() => {
 
 RootHero.displayName = 'RootHero'
 
-export default RootHero
+export { RootHero }

@@ -1,4 +1,4 @@
-export interface ILogoProps {
+export type TLogoProps = {
   height: number
   width: number
 }

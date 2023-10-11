@@ -7,9 +7,9 @@ import { memo } from 'react'
 import Link from 'next/link'
 
 // Types
-import { IMenuItemProps } from './types'
+import { TMenuItemProps } from './types'
 
-const MenuItem = memo(({ text, to }: IMenuItemProps) => {
+const MenuItem = memo(({ text, to }: TMenuItemProps) => {
   return (
     <li>
       <Link
@@ -24,4 +24,4 @@ const MenuItem = memo(({ text, to }: IMenuItemProps) => {
 
 MenuItem.displayName = 'MenuItem'
 
-export default MenuItem
+export { MenuItem }

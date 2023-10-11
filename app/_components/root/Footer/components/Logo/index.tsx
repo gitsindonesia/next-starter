@@ -7,9 +7,9 @@ import { memo } from 'react'
 import Image from 'next/image'
 
 // Types
-import { ILogoProps } from './types'
+import { TLogoProps } from './types'
 
-const Logo = memo((props: ILogoProps) => {
+const Logo = memo((props: TLogoProps) => {
   return (
     <div>
       <Image
@@ -30,4 +30,4 @@ const Logo = memo((props: ILogoProps) => {
 
 Logo.displayName = 'Logo'
 
-export default Logo
+export { Logo }

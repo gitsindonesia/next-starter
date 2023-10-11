@@ -6,7 +6,7 @@ import { memo } from 'react'
 // Components
 import { BaseButton } from '@/app/_components/base'
 
-const Buttons = memo(() => {
+const ButtonItem = memo(() => {
   return (
     <div className='flex justify-center md:justify-start gap-2 md:gap-4 mt-10'>
       <BaseButton
@@ -21,6 +21,6 @@ const Buttons = memo(() => {
   )
 })
 
-Buttons.displayName = 'DisplayName'
+ButtonItem.displayName = 'ButtonItem'
 
-export default Buttons
+export { ButtonItem }

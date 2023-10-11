@@ -1,4 +1,4 @@
-export interface IMenuItemProps {
+export type TMenuItemProps = {
   text: string
   to: string
 }

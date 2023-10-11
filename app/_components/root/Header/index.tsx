@@ -45,4 +45,4 @@ const RootHeader = memo(() => {
 
 RootHeader.displayName = 'RootHeader'
 
-export default RootHeader
+export { RootHeader }
