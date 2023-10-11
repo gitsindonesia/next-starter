@@ -8,13 +8,18 @@ import { ReactNode } from 'react'
 import { Metadata } from 'next'
 import { Poppins } from 'next/font/google'
 
+// Components
+import { StyledComponentsRegistry } from './_components/base/AntdRegistry'
+
+// Meta Data
 export const metadata: Metadata = {
   title: 'GITS Next Starter',
   description: 'Welcome to GITS Next Starter'
 }
 
+// Poppins
 const poppins = Poppins({
-  weight: ['400', '700'],
+  weight: ['100', '200', '300', '400', '500', '600', '700', '800'],
   subsets: ['latin'],
   variable: '--font-poppins'
 })
@@ -28,7 +33,9 @@ const RootLayout = ({
 }) => {
   return (
     <html lang='en'>
-      <body className={poppins.className}>{children}</body>
+      <body className={poppins.className}>
+        <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
+      </body>
     </html>
   )
 }
