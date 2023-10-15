@@ -2,8 +2,14 @@
 import { TAppStoreState } from '@/app/_store/app/app.store.type'
 
 type TAppStore = {
-  storeName: 'app'
-  state: TAppStoreState
+  feature: 'app'
+  state: Partial<TAppStoreState>
 }
 
-export type TStoreInitializerProps = TAppStore
+// Assign another store, this will be multiple
+// e.g (TAppStore | TAnotherStore)[]
+type TAppStoreList = TAppStore[]
+
+export type TStoreInitializerProps = {
+  modules: TAppStoreList
+}
