@@ -8,9 +8,6 @@ import { ReactNode } from 'react'
 import { Metadata } from 'next'
 import { Poppins } from 'next/font/google'
 
-// Components
-import { StyledComponentsRegistry } from './_components/base/AntdRegistry'
-
 // Meta Data
 export const metadata: Metadata = {
   title: 'GITS Next Starter',
@@ -33,9 +30,7 @@ const RootLayout = ({
 }) => {
   return (
     <html lang='en'>
-      <body className={poppins.className}>
-        <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
-      </body>
+      <body className={poppins.className}>{children}</body>
     </html>
   )
 }

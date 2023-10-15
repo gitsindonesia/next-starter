@@ -15,19 +15,13 @@ import {
 } from '@/app/_components/root'
 import Loading from './loading'
 
-// Antd
-import { ConfigProvider } from 'antd'
-
-// Utils
-import { antdTheme } from './_utils/antd.util'
-
 export const metadata: Metadata = {
   title: 'GITS Next Starter'
 }
 
 const RootPage = () => {
   return (
-    <ConfigProvider theme={antdTheme}>
+    <>
       <RootHeader />
       <RootHero />
       <RootFeature />
@@ -36,7 +30,7 @@ const RootPage = () => {
         <RootTodo />
       </Suspense>
       <RootFooter />
-    </ConfigProvider>
+    </>
   )
 }
 

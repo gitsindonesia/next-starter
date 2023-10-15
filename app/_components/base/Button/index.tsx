@@ -1,13 +1,13 @@
 'use client'
 
 // React
-import { forwardRef } from 'react'
+import { ButtonHTMLAttributes, forwardRef } from 'react'
 
-// Antd
-import { Button, ButtonProps } from 'antd'
-
-const BaseButton = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
-  return <Button {...props} ref={ref} />
+const BaseButton = forwardRef<
+  HTMLButtonElement,
+  ButtonHTMLAttributes<HTMLButtonElement>
+>((props, ref) => {
+  return <button {...props} ref={ref} />
 })
 
 BaseButton.displayName = 'BaseButton'
