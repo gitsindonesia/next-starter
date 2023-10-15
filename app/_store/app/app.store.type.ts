@@ -1,7 +1,14 @@
-export type TAppStoreState = {
-  counter: number
+export type TAppStoreTodo = {
+  id: string
+  title: string
+  completed: boolean
 }
 
-export type TAppStoreAction = {
-  handleCounter: (type: 'decrement' | 'increment') => void
+export type TAppStoreState = {
+  counter: number
+  todoList: TAppStoreTodo[]
+}
+
+export type TAppStoreMutation = {
+  HANDLE_COUNTER: (type: 'decrement' | 'increment') => void
 }

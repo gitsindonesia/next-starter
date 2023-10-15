@@ -2,11 +2,26 @@
 import { create } from 'zustand'
 
 // Types
-import { TAppStoreState, TAppStoreAction } from './app.store.type'
+import { TAppStoreState, TAppStoreMutation } from './app.store.type'
 
-export const useAppStore = create<TAppStoreState & TAppStoreAction>(set => ({
+export const useAppStore = create<TAppStoreState & TAppStoreMutation>(set => ({
+  // ========== State
+
   counter: 0,
-  handleCounter: type =>
+  todoList: [],
+
+  // ========== End State
+
+  // ========== Mutation
+
+  /**
+   * @description Handle counter
+   *
+   * @param {string} type
+   *
+   * @return {void} void
+   */
+  HANDLE_COUNTER: type =>
     set(state => ({
       counter:
         type === 'increment' ? (state.counter += 1) : (state.counter -= 1)
