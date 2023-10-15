@@ -10,7 +10,7 @@ const ButtonItem = memo(() => {
   return (
     <div className='flex justify-center md:justify-start gap-2 md:gap-4 mt-10'>
       <BaseButton
-        className='btn-open-github rounded'
+        className='text-white hover:text-slate-300'
         onClick={() =>
           window.open('https://github.com/gitsindonesia/next-starter')
         }

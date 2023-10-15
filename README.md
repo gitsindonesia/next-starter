@@ -4,14 +4,13 @@ This is Next Starter, using version 13 that you can see [here](https://beta.next
 
 ## Batteries Included
 
-- [shadcn UI](https://ui.shadcn.com/)
 - [Tailwind CSS](https://tailwindcss.com/)
-- [Redux Toolkit](https://redux-toolkit.js.org/)
-- [React Hook Form](https://react-hook-form.com/)
+- [Zustand State Management](https://github.com/pmndrs/zustand/)
 - [Storybook](https://storybook.js.org/)
 - [Jest](https://jestjs.io/)
 - [ESLint](https://eslint.org/)
-- Conventional Commits
+- [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/)
+- [Commit Linter](https://commitlint.js.org/#/)
 
 ---
 
@@ -20,33 +19,54 @@ This is Next Starter, using version 13 that you can see [here](https://beta.next
 Project structure for this Next starter
 
 ```javascript
-|__mocks__                 // Contain all mocks for test
-|__tests__                 // Contain all test inside the project
-|
-|app                       // Entry point for the app.
-|
-|assets                    // Assets, images, fonts, styles, etc.
-|   |___images
-|   |______icon            // Contain icon for the project.
-|   |______{another}       // Another related to images.
-|
-|components                // Contain global components or specific for some features.
-|   |___base               // Contain base components or specific for some features.
-|   |___{another}          // Another related to images.
-|
-|store                     // Contain redux / state management.
-|   |___{feature-name}     // Contain base components or specific for some features.
-|   |______rtk             // Contain rtk for specific feature.
-|   |______slice           // Contain slice for specific feature.
-|
-|types                     // Contain types definition for the app.
-|   |___{app}              // Contain types definition for the app feature.
-|   |______api.type.ts     // Type definition for the API (response from Back-End).
-|   |______common.type.ts  // Type definition common things inside Front-End.
-|   |___{feature-name}     // Contain types definition for specific feature.
-|
-|{another}                 // Another folder that have specific purpose.
+.husky                         // Contain husky configuration
+.ide                           // Contain Jetbrains configuration
+.next                          // Contain Next framework configuration
+.storybook                     // Contain storybook configuration
+.vscode                        // Contain vscode configuration to force local
+.cache                         // Contain jest cache
+.coverage                      // Contain jest coverage
+node_modules                   // Contain modules / third parties
+public                         // Contain public assets & etc
+__mocks__                      // Contain all mocks for test
+__tests__                      // Contain all test inside the project
+app                            // Entry point for the app.
+├── __mocks__                  // Contain mocks for jest
+├── __tests__                  // Contain test for the app features
+├── _api                       // Contain api for integration to back-end
+├── _assets                    // Contain assets for features
+├── _components                // Contain all base components or reusable
+│   ├── base                   // Contain all reusable components
+│   └── {another-folder}       // Your desired reusable component folder name
+├── _plugins                   // Contain all plugins config for your app
+├── _store                     // Contain all state management things using Zustand
+├── _types                     // Contain type definitions for core app
+├── _utils                     // Contain utilities / helpers for app
+├── {feature-name-folder}      // Contain your feature files, the the structure same as app folder (but isolated functionality)
+├── error.tsx                  // File for rendering error (app error)
+├── layout.tsx                 // File for rendering layout (app layout)
+├── loading.tsx                // File for rendering loading (app loading)
+└── page.tsx                   // File for rendering page (app (/) main page)
+.dockerignore                  // File for ignoring file to be inside image
+.env.development               // File for environment for develpoment stage
+.eslint.json                   // File config for eslint
+.prettierrc                    // File config for prettier
+commitlint.config.js           // File config for commitlint
+docker-compose-dev.yml         // File config for docker command
+Dockerfile                     // File config for dockerfile
+.env.d.ts                      // File config for type definition
+jest.config.js                 // File config for jest
+jest.setup.js                  // File config for setuping jest entry point
+next-env.d.ts                  // File config for type definition
+next.config.js                 // File config for next framework
+package.json                   // File config for your project
+postcss.config.js              // File config for postcss
+README.md                      // File for documentation (HEY YOU READING ME NOW!)
+tailwind.config.js             // File config for tailwind
+yarn.lock                      // File config for locking project packages (READONLY FILE!)
 ```
+
+Ref: [Next Project Structure](https://nextjs.org/docs/getting-started/project-structure)
 
 If you want to create folder outside declared above, you can create, but, don't forget to update this docs.
 
@@ -107,6 +127,8 @@ Upgrade minor semantic versioning 0.(0 <--- this).0
 ```shell
 yarn version:minor
 ```
+
+---
 
 Upgrade major semantic versioning (0 <--- this).0.0
 
