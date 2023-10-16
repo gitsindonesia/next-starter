@@ -90,6 +90,12 @@ Build next app
 yarn build
 ```
 
+Build with docker
+
+```shell
+docker build -t <username>/<imagename> .
+```
+
 ---
 
 ## Available commands for linting
